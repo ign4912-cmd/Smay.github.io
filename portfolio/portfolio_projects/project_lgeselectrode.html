@@ -98,13 +98,19 @@
   margin: 0 6px;
 }
     
+
 .card h3 {
-  margin: 16 0 4px 0;
+  margin: 16px 0 4px 0;   /* 위는 띄우고, 아래는 붙임 */
 }
-    
+
+.card h3:first-of-type {
+  margin-top: 0;          /* 첫 번째는 카드랑 붙임 */
+}
+
 .card ul {
-  margin-top: 0;
+  margin: 0;
 }
+
  
 
 
