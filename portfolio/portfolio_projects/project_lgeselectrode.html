@@ -163,10 +163,10 @@
         <li>영상 획득 시 발생하는 포커스 및 밝기 이상 검출</li>
         <li>블랍(Blob) 특징 데이터 산출</li>
       </ul>
-      <div style="display: flex; gap: 20px; margin-top: 10px;">
+      <div stylestyle="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 10px;">
         <img src="../../images/port_lges_inspection_1.png"
              style="width: 48%; height: auto; border-radius: 8px;">
-        <img src="../../images/port_lges_inspection_1.png"
+        <img src="../../images/port_lges_inspection_2.png"
              style="width: 48%; height: auto; border-radius: 8px;">
       </div>
   
@@ -251,7 +251,14 @@
     <h2>3. 문제 해결 경험</h2>
     <div class="card">
       <ul>
-        <li></li>
+        <li>Tape Image 검사</li>
+        <div style="margin-left: 12px;">→ Y축 방향 Tape 검출을 위해 Vertical 파라미터 추가하여 해결</div>
+        <li>비동기 데이터 처리</li>
+        <div style="margin-left: 12px;">→ Top/Back 비전 간 비동기 데이터 처리 문제를 Flag 기반 동기화 로직으로 해결</div>
+        <li>8k 핀홀 비전 제어</li>
+        <div style="margin-left: 12px;">→ 양쪽 2개의 비전을 독립적으로  제어시키기 위해 스레드 구조로 해결</div>
+        <li>Data Search 검색 속도</li>
+        <div style="margin-left: 12px;">→ vector 기반 탐색 구조를 map 기반 Key 검색 방식으로 개선하여 검색 속도 향상</div>
       </ul>
     </div>
   </div>
