@@ -198,11 +198,9 @@
                 <li>포토다이오드가 아날로그 값과 연결되어 있는 반면 이미지 픽셀은 디지털 값과 연결되어 있음</li>
                 <li>픽셀은 디지털 이미지에서 가장 작은 요소이며, '그림 요소'의 약자</li>                        
                 <!-- 이미지 추가 -->
-                <!--
                 <div class="img-box">
-                    <img src="../../images/deposition_structure.png" alt="증착구조">
+                    <img src="../../images/machinevision/machinevision_camera.png" alt="카메라구조">
                 </div>
-              -->
             </ul>
         </div>
     </div>
@@ -210,10 +208,56 @@
     <div class="section">
         <h2>2. 디지털 이미지 개념</h2>
         <div class="card">
-            <h3>① 해상도</h3>
+            <h3>① 해상도 (Resolution)</h3>
             <ul>
                 <li>디지털 이미지는 픽셀로 구성되며, 이미지 해상도는 이미지의 픽셀 열과 픽셀 행 수를 측정한 것</li>
                   <div class="li-desc">1280 X 1024의 이미지 해상도는 이미지의 너비가 1280픽셀, 높이가 1024픽셀임을 나타냄</div>
+                <div class="img-box">
+                    <img src="../../images/machinevision/machinevision_camera_resolution.png" alt="해상도">
+                </div>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>② (빛의)세기 (Intensity)</h3>
+            <ul>
+                <li>이미지 픽셀의 밝기를 세기(Intensity)라고 함</li>
+                <li>ADC의 비트 심도가 클수록 세기를 표현할 수 있는 범위가 커짐</li>
+                    <div class="li-desc">　 예를 들어, ADC의 비트 심도가 8비트인 경우 세기를 표현하는 데 사용할 수 있는 값은 256(0~255)가 됨</div>
+                    <div class="li-desc">　 ADC의 비트 심도가 12비트인 경우 세기를 표현하는 데 사용할 수 있는 값은 4096이 됨</div>
+                <div class="img-box">
+                    <img src="../../images/machinevision/machinevision_camera_intensity.png" alt="Intensity">
+                </div>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>③ 노출 (Exposure)</h3>
+            <ul>
+                <li>포토다이오드가 빛에 노출되는 시간을 나타냄</li>
+                <li>노출 시간은 일반적으로 마이크로초(us) 및 밀리초(ms) 단위로 측정</li>
+                <div class="img-box">
+                    <img src="../../images/machinevision/machinevision_camera_exposure.png" alt="노출">
+                </div>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>④ 증폭 (Gain)</h3>
+            <ul>
+                <li>픽셀에 대한 강도 값의 증폭</li>
+                <li>센서에서 포토다이오드 전하의 세기가 커지면 아날로그 게인(analog gain)</li>
+                <li>전하가 디지털 값으로 변화된 후 픽셀 값이 커지면 디지털 게인(digital gain)</li>
+                <div class="img-box">
+                    <img src="../../images/machinevision/machinevision_camera_gain.png" alt="Gain">
+                </div>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>⑤ 프레임 속도 (Framerate)</h3>
+            <ul>
+                <li>측정된 프레임 속도 (초당 프레임 또는 FPS)</li>
+                <li>포토 센서가 1초에 출력할 수 있는 이미지 수</li>
+                <div class="img-box">
+                    <img src="../../images/machinevision/machinevision_camera_framerate.png" alt="프레임속도">
+                </div>
             </ul>
         </div>
     </div>
