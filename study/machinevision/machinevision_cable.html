@@ -186,12 +186,7 @@
                 <li>머신비전 카메라 케이블 연결은 카메라와 프레임그래버 또는 PC 간의 데이터 전송 및 전원 공급을 담당한다.</li>
                 <li>GigE, USB3, Camera Link, CoaXPress 등 인터페이스에 따라 케이블 종류와 연결 방식이 달라진다.</li>
                 <li>안정적인 신호 전송을 위해 케이블 길이, 차폐 성능, 커넥터 고정 상태를 고려하는 것이 중요하다.</li>
-                <!-- 이미지 추가 -->
-                <!--
-                <div class="img-box">
-                    <img src="../../images/deposition_structure.png" alt="증착구조">
-                </div>
-              -->
+                <li>각 인터페이스는 전송 속도, 케이블 최대 길이, 용도에 따라 선택이 달라진다.</li>
             </ul>
         </div>
     </div>
@@ -201,36 +196,70 @@
         <div class="card">
             <h3>① Ethernet</h3>
             <ul>
-                <li>이더넷은 1983년 IEEE에서 802.3 표준으로 도입한 LAN 기술</li>
-                <li>IEEE 802.3은 물리적 계층 및 데이터 링크 계층의 미디어 엑세스 제어(MAC)에 대한 사양 정의</li>
+                <li>1983년 IEEE 802.3 표준으로 도입된 LAN 기술</li>
+                <li>IEEE 802.3은 물리적 계층 및 데이터 링크 계층의 미디어 액세스 제어(MAC)에 대한 사양 정의</li>
                 <li>연선 동선(BASE-T)과 광섬유 배선(BASE-R)을 지원하는 유선 기술</li>
-                  <div class="li-desc">연선 구리 배선 기반 BASE-T 이더넷 표준</div>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_cable_base_t.png" alt="케이블">
-                </div>
-                  <div class="li-desc">광섬유 배선 기반 BASE-R 이더넷 표준</div>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_cable_base_r.png" alt="케이블">
-                </div>
+                <li>연선 구리 배선 기반 BASE-T 이더넷 표준
+                    <div class="li-desc">1000BASE-T : 1Gbps, Cat5e/Cat6, 최대 100m</div>
+                    <div class="li-desc">10GBASE-T : 10Gbps, Cat6A/Cat7/Cat7A, 최대 100m</div>
+                </li>
+                <li>광섬유 배선 기반 BASE-R 이더넷 표준
+                    <div class="li-desc">10GBASE-R : 10Gbps, SFP+, 최대 80km</div>
+                    <div class="li-desc">25GBASE-R : 25Gbps, SFP28, 최대 80km</div>
+                    <div class="li-desc">50GBASE-R : 50Gbps, QSFP28/SFP56, 최대 80km</div>
+                    <div class="li-desc">100GBASE-R : 100Gbps, QSFP28/SFP56/SFP-DD, 최대 80km</div>
+                </li>
             </ul>
+            <div class="img-box">
+                <img src="https://emergentvisiontec.com/wp-content/uploads/2022/12/AdobeStock_2675365-scaled-e1671053008500-600x324.jpeg" alt="Ethernet 케이블">
+            </div>
 
-            <h3>② USB</h3>
+            <h3>② USB (Universal Serial Bus)</h3>
             <ul>
-                <li>blah, blah, blah</li>
-                  <div class="li-desc">blah, blah, blah</div>
+                <li>1996년 처음 발표되었으며 USB-IF(USB Implementers Forum)에서 관리</li>
+                <li>주변기기 연결을 표준화하도록 설계된 범용 직렬 버스 인터페이스</li>
+                <li>버전별 전송 속도 및 케이블 최대 길이
+                    <div class="li-desc">USB 2.0 : 480Mbps, 최대 5m</div>
+                    <div class="li-desc">USB 3.0 / 3.1 Gen 1 : 5Gbps, 최대 3m</div>
+                    <div class="li-desc">USB 3.1 Gen 2 : 10Gbps, 최대 3m</div>
+                    <div class="li-desc">USB 3.2 (2×3.1 Gen 1) : 10Gbps, 최대 3m</div>
+                    <div class="li-desc">USB 3.2 (2×3.1 Gen 2) : 20Gbps, 최대 3m</div>
+                    <div class="li-desc">USB 4 : 40Gbps, 최대 0.8m</div>
+                </li>
             </ul>
+            <div class="img-box">
+                <img src="https://emergentvisiontec.com/wp-content/uploads/2022/12/usb_types-800x198.png" alt="USB 케이블 종류">
+            </div>
 
-            <h3>③ CXP</h3>
+            <h3>③ CoaXPress (CXP)</h3>
             <ul>
-                <li>blah, blah, blah</li>
-                  <div class="li-desc">blah, blah, blah</div>
+                <li>동축 케이블을 통한 점대점(Point-to-Point) 통신 표준</li>
+                <li>2008년 Vision Show에서 공개되었으며 JIIA(Japan Industrial Imaging Association)에서 관리</li>
+                <li>버전별 전송 속도 및 케이블 최대 길이
+                    <div class="li-desc">CXP-1 : 1.25Gbps, 최대 212m</div>
+                    <div class="li-desc">CXP-6 : 6.25Gbps, 최대 60m</div>
+                    <div class="li-desc">CXP-12 : 12.5Gbps, 최대 40m</div>
+                    <div class="li-desc">CXP Over Fiber : 10Gbps, 최대 80km</div>
+                </li>
             </ul>
+            <div class="img-box">
+                <img src="https://emergentvisiontec.com/wp-content/uploads/2022/12/CXPconnectors.jpg" alt="CoaXPress 커넥터">
+            </div>
 
             <h3>④ Camera Link</h3>
             <ul>
-                <li>blah, blah, blah</li>
-                  <div class="li-desc">blah, blah, blah</div>
+                <li>카메라와 프레임 그래버(Frame Grabber) 간의 연결을 표준화한 병렬 통신용 고대역폭 프로토콜</li>
+                <li>구리 및 광섬유 케이블을 모두 지원</li>
+                <li>버전별 전송 속도 및 케이블 최대 길이
+                    <div class="li-desc">Camera Link Base : 2.04Gbps, 최대 10m</div>
+                    <div class="li-desc">Camera Link Full : 5.44Gbps, 최대 10m</div>
+                    <div class="li-desc">Camera Link Deca : 6.80Gbps, 최대 10m</div>
+                    <div class="li-desc">Camera Link HS : 25Gbps, 최대 80km (광섬유)</div>
+                </li>
             </ul>
+            <div class="img-box">
+                <img src="https://emergentvisiontec.com/wp-content/uploads/2022/12/CL.png" alt="Camera Link 커넥터">
+            </div>
         </div>
     </div>
 </section>
