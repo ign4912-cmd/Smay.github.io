@@ -440,4 +440,74 @@
                             <li>"디지털 값을 출력" (ADC 설명) <li-desc>목적어 생략 → 아날로그 값을 디지털 값으로 변환하여 출력</li-desc></li>
                             <li>"감지기 디지털 이미지의 픽셀에 해당" <li-desc>어순 어색 → 디지털 이미지 센서의 픽셀에 해당</li-desc></li>
                             <li>"포토다이오드가…연결되어 있는 반면" <li-desc>표현 부자연스러움 → 포토다이오드는 아날로그 값을, 이미지 픽셀은 디지털 값을 가짐</li-desc></li>
-                            <li>"전하가 디지털 값으로 변화된 후
+                            <li>"전하가 디지털 값으로 변화된 후" <li-desc>오탈자 → 변환된 후</li-desc></li>
+                            <li>"측정된 프레임 속도" <li-desc>의미 불명확 → 프레임 속도의 측정 단위(FPS)</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_illumination.html</h3><span class="badge">이슈 6건</span></div>
+                        <ul>
+                            <li>"대상 정명을 향함" <li-desc>오탈자(다른 곳은 '대상 장면') → 대상 장면을 향함</li-desc></li>
+                            <li>"반사 자연 기반 조명" <li-desc>오탈자 → 반사 특성 기반 조명</li-desc></li>
+                            <li>"자외선(UV)은 가시광선(200nm~400nm)보다 짧은 파장(400nm~780nm)" <li-desc>수치 반전(명백한 기술 오류) → 가시광선(400~780nm), 자외선(200~400nm)으로 정정</li-desc></li>
+                            <li>"적외선(780nm 및 1mm) 영역" <li-desc>범위 표현 오류 → 적외선(780nm~1mm)</li-desc></li>
+                            <li>"Red, Green, Blue의 좁은 파장 대역" (서술어 없음) <li-desc>→ 좁은 파장 대역을 사용한다</li-desc></li>
+                            <li>"백색광이 필요" (종결어미 누락) <li-desc>→ 백색광이 필요하다</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_interface.html</h3><span class="badge">구조적 이슈 1건</span></div>
+                        <ul>
+                            <li>문서 전반의 문장이 명사형으로 종결되어 서술어가 생략됨 <li-desc>용어집 스타일로 의도된 것일 수 있으나, 다른 페이지와 문체 통일을 위해 "~역할을 담당한다" 형태의 서술형으로 정리하는 것을 제안. 톤 통일 여부는 확인 필요</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_computing.html</h3><span class="badge">이슈 1건</span></div>
+                        <ul>
+                            <li>"자율 주행 차량, 드론, 의료 기기 등 대형 시스템에 내장" <li-desc>임베디드 컴퓨팅 특성과 모순(소형·저전력 장치용) → '대형 시스템'을 '다양한 시스템/각종 기기'로 수정</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_cable.html · machinevision_software.html</h3><span class="badge ok">이슈 없음</span></div>
+                        <ul>
+                            <li>두 파일 모두 오탈자 및 문맥 오류가 발견되지 않았습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h4>4. References - 검토 결과</h4>
+                    <div class="card">
+                        <div class="card-head"><h3>references.html</h3><span class="badge">이슈 1건 (확인 필요)</span></div>
+                        <ul>
+                            <li>"텐선비남육택 유튜브" <li-desc>정상적인 단어 조합이 아닌 깨진 텍스트로 표기됨 → 실제 채널명/영상 제목으로 교체 필요 (원본 확인 필요)</li-desc></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h4>5. 다음 액션</h4>
+                    <div class="card">
+                        <ul>
+                            <li>위 목록 확인 후 승인된 항목부터 원본 study 페이지에 반영</li>
+                            <li>기술적 정확성 이슈(부도체/반도체 표현, 전기장·자기장 혼동, UV/가시광선 파장 반전 등)는 우선순위 높게 처리 권장</li>
+                            <li>machinevision_interface.html 문체 통일 여부는 별도 확인 후 결정</li>
+                            <li>display, secondarybattery 섹션은 아직 콘텐츠가 없어 이번 검토에서 제외됨</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </details>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Smay Portfolio · 검토 리포트</p>
+    </footer>
+</body>
+</html>
