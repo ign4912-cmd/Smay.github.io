@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스터디 검토 리포트 | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --primary: #6366f1;
+            --text: #e5e7eb;
+            --sub: #9ca3af;
+            --ok: #22c55e;
+            --warn: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1f2937;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 { font-size: 18px; }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 140px 20px 60px;
+        }
+
+        .hero h2 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--sub);
+            font-size: 16px;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .summary .stat {
+            background: var(--card);
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .summary .stat .num {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .summary .stat .label {
+            color: var(--sub);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #1f2937;
+            transition: 0.3s;
+            margin-bottom: 16px;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+        }
+
+        .card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+        }
+
+        .badge {
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--warn);
+            color: var(--warn);
+            white-space: nowrap;
+        }
+
+        .badge.ok {
+            border-color: var(--ok);
+            color: var(--ok);
+        }
+
+        .card ul {
+            padding-left: 18px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .card li-desc {
+            margin-top: 3px;
+            font-size: 13px;
+            color: var(--sub);
+            padding-left: 6px;
+            display: block;
+        }
+
+        /* ---- 날짜별 히스토리 엔트리 ---- */
+        .entry {
+            background: var(--card);
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .entry[open] {
+            border-color: var(--primary);
+        }
+
+        .entry summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .entry summary::-webkit-details-marker { display: none; }
+
+        .entry summary::after {
+            content: '▾';
+            color: var(--sub);
+            transition: transform 0.2s;
+            margin-left: auto;
+        }
+
+        .entry[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .entry-date {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .entry-latest {
+            font-size: 11px;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 999px;
+            padding: 2px 10px;
+            margin-left: 10px;
+        }
+
+        .entry-meta {
+            font-size: 13px;
+            color: var(--sub);
+        }
+
+        .entry-body {
+            padding: 0 25px 30px;
+            border-top: 1px solid #1f2937;
+        }
+
+        .entry-body .section-block {
+            margin-top: 26px;
+        }
+
+        .entry-body .section-block h4 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #1f2937;
+            color: var(--sub);
+        }
+
+        .breadcrumb a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #e5e7eb;
+        }
+
+        .breadcrumb span {
+            margin: 0 6px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                <a href="./study.html">Study Archive</a>
+                <span>›</span>
+                <span>검토 리포트</span>
+            </div>
+        </div>
+        <nav>
+            <h1>Study Archive</h1>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>스터디 자료 검토 리포트</h2>
+        <p>검토 요청 날짜별 히스토리 관리 · 최신 날짜가 맨 위</p>
+    </section>
+
+    <section class="section">
+        <h2>검토 히스토리</h2>
+
+        <!-- ============================================= -->
+        <!-- 새 검토를 추가할 때는 이 주석 바로 아래에         -->
+        <!-- <details class="entry"> 블록을 하나 더 붙여넣고   -->
+        <!-- 가장 최근 것만 open 속성을 유지하세요.            -->
+        <!-- ============================================= -->
+
+        <details class="entry" open>
+            <summary>
+                <span><span class="entry-date">2026-07-01</span><span class="entry-latest">최신</span></span>
+                <span class="entry-meta">검토 파일 19개 · 이슈 65+건</span>
+            </summary>
+            <div class="entry-body">
+
+                <div class="section-block">
+                    <h4>1. 검토 요약</h4>
+                    <div class="summary">
+                        <div class="stat"><div class="num">19</div><div class="label">검토 파일 수</div></div>
+                        <div class="stat"><div class="num">65+</div><div class="label">발견된 이슈</div></div>
+                        <div class="stat"><div class="num">2</div><div class="label">이슈 없음 파일</div></div>
+                        <div class="stat"><div class="num">1</div><div class="label">미조치 항목</div></div>
+                    </div>
+                    <div class="card">
+                        <p>반도체 공정(10개 파일)과 머신비전(8개 파일), References(1개 파일)의 텍스트 내용을 검토했습니다. 오탈자와 띄어쓰기 오류가 가장 많았고, 일부 파일에서는 기술적으로 부정확한 설명(예: 반도체를 "부도체"로 표현, 자기장/전기장 혼동, 가시광선·자외선 파장 수치 반전)이 발견되어 우선 수정이 필요합니다.</p>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h4>2. 반도체 공정 - 검토 결과</h4>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_wafer.html</h3><span class="badge">이슈 9건</span></div>
+                        <ul>
+                            <li>"실리콘(Si)로 만들어지며" <li-desc>조사 오용 → 실리콘(Si)으로 만들어지며</li-desc></li>
+                            <li>"원형 판위에 회로를" <li-desc>띄어쓰기 → 원형 판 위에 회로를</li-desc></li>
+                            <li>"결정 성장시켜 굳이는 작업" <li-desc>오탈자 → 굳히는 작업</li-desc></li>
+                            <li>"둥근 팽이 모양의 잉곳" <li-desc>문맥 오류(잉곳은 원기둥형) → 둥근 기둥 모양의 잉곳</li-desc></li>
+                            <li>"지름이 클 수록 생산량이 증가된다" <li-desc>띄어쓰기 → 클수록</li-desc></li>
+                            <li>"도체 소자의 기반이 되는 실리콘" <li-desc>오탈자('반' 누락) → 반도체 소자의 기반이 되는 실리콘</li-desc></li>
+                            <li>"칩 안에 직접한 전자부품" <li-desc>오탈자 → 집적한 전자부품</li-desc></li>
+                            <li>"규소(Si)를 이용함 → 부도체 상태" <li-desc>기술 오류(순수 규소는 반도체 물질) → '부도체' 표현 삭제/수정</li-desc></li>
+                            <li>"규소외에도 갈륨 아세나이드" <li-desc>띄어쓰기 → 규소 외에도</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_oxidation.html</h3><span class="badge">이슈 5건</span></div>
+                        <ul>
+                            <li>"부도체 상태인 wafer에 절연막" <li-desc>기술 오류 → 반도체 상태인 wafer에</li-desc></li>
+                            <li>"재료역할을 하는데 이를 전구체" <li-desc>띄어쓰기·지시어 모호 → 재료 역할을 하는데, 이 규소를 전구체라고 한다</li-desc></li>
+                            <li>"한솔 케미칼" <li-desc>사명 띄어쓰기 → 한솔케미칼</li-desc></li>
+                            <li>"습식산화를 통해 얻어지 산화막" <li-desc>오탈자 → 얻어진 산화막</li-desc></li>
+                            <li>"여러가지 방법들이 존재" <li-desc>띄어쓰기 → 여러 가지</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_photolithography.html</h3><span class="badge">이슈 3건</span></div>
+                        <ul>
+                            <li>"이엔에프테크놀로, Purit" <li-desc>오탈자('지' 누락) → 이엔에프테크놀로지</li-desc></li>
+                            <li>"여러가지 화학물질 제작" <li-desc>띄어쓰기 → 여러 가지</li-desc></li>
+                            <li>"이 부분에는 어떤게 있을까? 찾아보는 것도 좋을 것 같아" <li-desc>미완성 메모가 그대로 남음 → 실제 검사 항목(오버레이/CD 측정, 결함 검사 등)으로 대체 필요</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_etching.html</h3><span class="badge">이슈 7건</span></div>
+                        <ul>
+                            <li>"나머지 부분을 제외 시키는 역할" <li-desc>단어 중복 → 나머지 부분을 제거시키는 역할</li-desc></li>
+                            <li>"습식(Dry)과 건식(Dry) 식각" <li-desc>소제목 오타 → 습식(Wet)과 건식(Dry)</li-desc></li>
+                            <li>"충분한 크기의 자기장이 기체에 가해질 때" <li-desc>기술 오류(전기장과 혼동) → 전기장이 기체에 가해질 때</li-desc></li>
+                            <li>"자기장이 자유전자를 가속화시켜" <li-desc>위와 동일 → 전기장이 자유전자를 가속화시켜</li-desc></li>
+                            <li>"얼마나 동일한 가" <li-desc>띄어쓰기 → 얼마나 동일한가</li-desc></li>
+                            <li>"수율을 향상시키기 위해 노력이 필요" <li-desc>호응 어색 → 향상시키기 위한 노력이 필요</li-desc></li>
+                            <li>"SIC 링 관련 업체" <li-desc>표기 오류 → SiC 링 관련 업체</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_deposition.html</h3><span class="badge">이슈 4건</span></div>
+                        <ul>
+                            <li>"스퍼터링 타켓 제조 업체" <li-desc>표기 불일치 → 타겟</li-desc></li>
+                            <li>"외부 에너지가 부여된 수증기 형태로 쏘아 증착" <li-desc>기술 오류 → 기체 형태로 쏘아 증착</li-desc></li>
+                            <li>"세분화 할 수 있음" <li-desc>띄어쓰기 → 세분화할 수 있음</li-desc></li>
+                            <li>"ⓑ 원자층 증착방법" <li-desc>번호 체계 오류(①②③ 흐름과 불일치) → ③으로 수정, 이후 항목 재정렬</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_ion_implantation.html</h3><span class="badge">이슈 7건</span></div>
+                        <ul>
+                            <li>"도체와, 통하지 않는 부도체의 성질" <li-desc>불필요한 쉼표 제거</li-desc></li>
+                            <li>"불순물을 넣어줘 전류를 흐르게하는" <li-desc>구어체·띄어쓰기 → 불순물을 넣어 전류가 흐르게 함으로써</li-desc></li>
+                            <li>"불순물을 이온(Ion)이라고 함" <li-desc>기술 부정확(불순물 자체가 이온은 아님) → 주입에 사용하는 불순물(도펀트)을 이온화하여 사용</li-desc></li>
+                            <li>"붕소(B)등을 사용" <li-desc>띄어쓰기 → 붕소(B) 등을 사용</li-desc></li>
+                            <li>"도핑 = 이온주입 공정" <li-desc>동일시 오류(이온주입은 도핑 구현 방법 중 하나) → 관계 재기술 필요</li-desc></li>
+                            <li>"고온의 플라즈마를 사용하여" <li-desc>기술 부정확 → 전자 충돌 방식의 플라즈마를 사용하여</li-desc></li>
+                            <li>"가속 시킴 / 주입 시키는 과정" <li-desc>띄어쓰기 → 가속시킴 / 주입시키는 과정</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_metal_interconnect.html</h3><span class="badge">이슈 3건</span></div>
+                        <ul>
+                            <li>"전기길(금속선)을 연결" <li-desc>비표준 조어·띄어쓰기 → 배선(금속선)을 연결하는 과정</li-desc></li>
+                            <li>"전기적 충격을 주면 금속은 증기 상태" <li-desc>용어 부정확 → 전자빔(e-beam)을 가하면</li-desc></li>
+                            <li>"베리어 메탈" <li-desc>외래어 표기 → 배리어 메탈</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_electrical_die_sorting.html</h3><span class="badge">이슈 6건</span></div>
+                        <ul>
+                            <li>"패키징공정(Pakaging)" <li-desc>영문 스펠링 오타 → Packaging</li-desc></li>
+                            <li>"효율 향상" (명사형 종결) <li-desc>호응 보완 → 효율을 향상시킴</li-desc></li>
+                            <li>"제품의 결합, 약한 부분" <li-desc>오탈자 → 제품의 결함</li-desc></li>
+                            <li>"판정. 수선 가능한 칩은…저장하는데" <li-desc>문장 호응 부자연스러움 → 문장 연결 재정리</li-desc></li>
+                            <li>"손실 점감 효과" <li-desc>오탈자 → 손실 절감 효과</li-desc></li>
+                            <li>"Inling 공정을 마친 웨이퍼" <li-desc>앞 문단 'Inking'과 표기 불일치 → Inking으로 통일</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_packaging.html</h3><span class="badge">이슈 2건</span></div>
+                        <ul>
+                            <li>"위에 옮겨 짐" <li-desc>띄어쓰기 → 옮겨짐</li-desc></li>
+                            <li>"펌프 제작 업체 : MK전자, 덕산하이메탈" <li-desc>오탈자(문맥상 범프) → 범프 제작 업체</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>semiconductor_process_detail.html</h3><span class="badge">이슈 1건</span></div>
+                        <ul>
+                            <li>"EDS 공정~ 패키징 공정" <li-desc>물결표 앞뒤 띄어쓰기 불균형 → EDS 공정 ~ 패키징 공정</li-desc></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h4>3. 머신비전 - 검토 결과</h4>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_introduction.html</h3><span class="badge">이슈 3건</span></div>
+                        <ul>
+                            <li>"향상 시킬 수 있음 / 최소화 할 수 있음" <li-desc>띄어쓰기 → 향상시킬 수 있음 / 최소화할 수 있음</li-desc></li>
+                            <li>"식음료등과 같은 산업" <li-desc>띄어쓰기 → 식음료 등과 같은</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_lens.html</h3><span class="badge">이슈 1건</span></div>
+                        <ul>
+                            <li>"F-Stop 값이 작을 수록" <li-desc>띄어쓰기 → 작을수록</li-desc></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head"><h3>machinevision_camera.html</h3><span class="badge">이슈 6건</span></div>
+                        <ul>
+                            <li>"호출된 배열 노출 광자의 전자기 에너지가…포텐셜 우물 역할" <li-desc>문장 구조 어색 → 배열로 배치되어 노출된 광자의 에너지가 미세 전압으로 변환되는 포텐셜 우물 역할을 함</li-desc></li>
+                            <li>"디지털 값을 출력" (ADC 설명) <li-desc>목적어 생략 → 아날로그 값을 디지털 값으로 변환하여 출력</li-desc></li>
+                            <li>"감지기 디지털 이미지의 픽셀에 해당" <li-desc>어순 어색 → 디지털 이미지 센서의 픽셀에 해당</li-desc></li>
+                            <li>"포토다이오드가…연결되어 있는 반면" <li-desc>표현 부자연스러움 → 포토다이오드는 아날로그 값을, 이미지 픽셀은 디지털 값을 가짐</li-desc></li>
+                            <li>"전하가 디지털 값으로 변화된 후

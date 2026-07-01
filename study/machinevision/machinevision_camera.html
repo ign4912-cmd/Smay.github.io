@@ -44,17 +44,23 @@
             padding: 20px;
         }
 
+        nav p {
+            color: var(--sub);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
         section {
             max-width: 1100px;
             margin: auto;
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -104,6 +110,70 @@
             border: 1px solid #1f2937;
         }
 
+        .img-caption {
+            margin-top: 6px;
+            font-size: 12px;
+            color: var(--sub);
+        }
+
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .note strong {
+            color: var(--primary);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -130,6 +200,7 @@
           align-items: center;
           gap: 6px;
           margin-top: 10px;
+          margin-right: 8px;
           padding: 6px 12px;
           font-size: 13px;
           color: var(--primary);
@@ -138,16 +209,16 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
@@ -171,101 +242,57 @@
     </div>
 
     <nav>
-        <h3>카메라 (Camera)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
+        <h3>카메라 (Camera) - 심화</h3>
+        <p>머신비전 개발자를 위한 이미지 센서 · 파라미터 심화 학습</p>
     </nav>
 </header>
 
 <section>
+
     <div class="section">
-        <h2>1. 개요</h2>
+        <h2>1. 카메라 시스템 구성</h2>
         <div class="card">
             <ul>
-                <li>렌즈 마운트, 이미지 센서, 프로세서, 전력 전자 장치 및 통신 인터페이스를 포함하는 보호 케이스</li>
-                <li>들어오는 빛(광자)을 전기 신호(전자)로 변환하는 이미지 센서가 있음</li>
-                <li>이미지 센서 구성</li>
-                    <div class="li-desc">"포토다이오드" : 호출된 배열 노출 광자의 전자기 에너지가 마이크로 전압으로 변환되는 포텐셜 우물 역할</div>
-                    <div class="li-desc">"ADC(Analog-to-Digital Converter)" : 디지털 값을 출력</div>
-                    <div class="li-desc">"이미지센서"</div>
+                <li>렌즈 마운트, 이미지 센서, 영상처리 프로세서(ISP/FPGA), 전력 전자 장치, 통신 인터페이스 커넥터를 포함하는 보호 케이스로 구성</li>
+                <li>핵심은 이미지 센서 : 들어오는 빛(광자)을 전기 신호(전자)로 변환(광전 효과)하는 소자</li>
+                <li>이미지 센서를 구성하는 핵심 요소
+                    <div class="li-desc">"포토다이오드(Photodiode)" : 반도체 소자로, 입사된 광자를 전자로 변환해 전하 형태로 저장하는 "포텐셜 우물(Potential Well)" 역할을 함</div>
+                    <div class="li-desc">"ADC(Analog-to-Digital Converter)" : 포토다이오드가 축적한 아날로그 전압 값을 디지털 값(그레이 레벨)으로 변환</div>
+                </li>
+                <li>이미지 센서 분류 기준
                     <div class="li-desc">물리적 구조 : CCD, CMOS</div>
-                    <div class="li-desc">픽셀 치수 : Area scan, Line scan</div>
+                    <div class="li-desc">픽셀 배열 : Area Scan(면 스캔), Line Scan(선 스캔)</div>
                     <div class="li-desc">채도 유형 : Color, Mono</div>
-                    <div class="li-desc">셔터 유형 : Global, Rolling</div>
-                    <div class="li-desc">광 스펙트럼 및 빛의 편광 : UV, SWIR, NIR</div>
-                <li>각각의 포토다이오드는 감지기 디지털 이미지의 픽셀에 해당</li>
-                <li>포토다이오드가 아날로그 값과 연결되어 있는 반면 이미지 픽셀은 디지털 값과 연결되어 있음</li>
-                <li>픽셀은 디지털 이미지에서 가장 작은 요소이며, '그림 요소'의 약자</li>                        
-                <!-- 이미지 추가 -->
+                    <div class="li-desc">셔터 유형 : Global Shutter, Rolling Shutter</div>
+                    <div class="li-desc">감응 스펙트럼 : UV, Visible, NIR, SWIR</div>
+                </li>
+                <li>포토다이오드 1개 = 디지털 이미지의 픽셀 1개에 대응</li>
+                <li>포토다이오드는 아날로그 전하 값을 가지며, ADC를 거친 후에야 픽셀은 디지털 값을 가짐</li>
+                <li>픽셀(Pixel)은 디지털 이미지를 구성하는 최소 단위이며, "Picture Element"의 약자</li>
                 <div class="img-box">
                     <img src="../../images/machinevision/machinevision_camera.png" alt="카메라구조">
+                    <div class="img-caption">머신비전 카메라의 일반적인 하드웨어 구성</div>
                 </div>
             </ul>
+            <div class="note">
+                <strong>개발자 노트</strong> — 카메라는 검사 알고리즘 파이프라인의 첫 단계, 즉 "광학 신호 → 디지털 데이터" 변환기입니다. 센서 특성(노이즈, 다이내믹 레인지, 셔터 방식)을 이해해야 임계값 설정, 노이즈 필터링, ROI 설계 같은 후단 알고리즘의 근거를 세울 수 있습니다.
+            </div>
         </div>
     </div>
 
     <div class="section">
-        <h2>2. 디지털 이미지 개념</h2>
+        <h2>2. 이미지 센서 아키텍처 : CCD vs CMOS</h2>
         <div class="card">
-            <h3>① 해상도 (Resolution)</h3>
             <ul>
-                <li>디지털 이미지는 픽셀로 구성되며, 이미지 해상도는 이미지의 픽셀 열과 픽셀 행 수를 측정한 것</li>
-                  <div class="li-desc">1280 X 1024의 이미지 해상도는 이미지의 너비가 1280픽셀, 높이가 1024픽셀임을 나타냄</div>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_camera_resolution.png" alt="해상도">
-                </div>
+                <li>CCD(Charge-Coupled Device) : 모든 픽셀의 전하를 순차적으로 하나의 공통 출력 앰프까지 이동시켜 직렬로 판독</li>
+                <li>CMOS(Complementary Metal-Oxide-Semiconductor) : 각 픽셀(또는 컬럼) 단위로 증폭기와 ADC를 내장해 병렬로 판독</li>
             </ul>
-        </div>
-        <div class="card">
-            <h3>② (빛의)세기 (Intensity)</h3>
-            <ul>
-                <li>이미지 픽셀의 밝기를 세기(Intensity)라고 함</li>
-                <li>ADC의 비트 심도가 클수록 세기를 표현할 수 있는 범위가 커짐</li>
-                    <div class="li-desc">　 예를 들어, ADC의 비트 심도가 8비트인 경우 세기를 표현하는 데 사용할 수 있는 값은 256(0~255)가 됨</div>
-                    <div class="li-desc">　 ADC의 비트 심도가 12비트인 경우 세기를 표현하는 데 사용할 수 있는 값은 4096이 됨</div>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_camera_intensity.png" alt="Intensity">
-                </div>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>③ 노출 (Exposure)</h3>
-            <ul>
-                <li>포토다이오드가 빛에 노출되는 시간을 나타냄</li>
-                <li>노출 시간은 일반적으로 마이크로초(us) 및 밀리초(ms) 단위로 측정</li>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_camera_exposure.png" alt="노출">
-                </div>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>④ 증폭 (Gain)</h3>
-            <ul>
-                <li>픽셀에 대한 강도 값의 증폭</li>
-                <li>센서에서 포토다이오드 전하의 세기가 커지면 아날로그 게인(analog gain)</li>
-                <li>전하가 디지털 값으로 변화된 후 픽셀 값이 커지면 디지털 게인(digital gain)</li>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_camera_gain.png" alt="Gain">
-                </div>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>⑤ 프레임 속도 (Framerate)</h3>
-            <ul>
-                <li>측정된 프레임 속도 (초당 프레임 또는 FPS)</li>
-                <li>포토 센서가 1초에 출력할 수 있는 이미지 수</li>
-                <div class="img-box">
-                    <img src="../../images/machinevision/machinevision_camera_framerate.png" alt="프레임속도">
-                </div>
-            </ul>
-        </div>
-    </div>
-</section>
 
-<footer>
-    <p>© 2026 NDoubleuK Portfolio</p>
-</footer>
-
-</body>
-</html>
+            <div class="svg-box">
+                <svg viewBox="0 0 620 240" xmlns="http://www.w3.org/2000/svg">
+                    <text x="150" y="26" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="700">CCD</text>
+                    <g>
+                        <rect x="60" y="40" width="180" height="100" fill="none" stroke="#1f2937"/>
+                        <!-- pixel grid -->
+                        <g fill="#111827" stroke="#374151">
+                            <rect x="65" y="45" width="40" height="22"/><rect x="110" y="45" width="40
