@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -50,11 +50,11 @@
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -138,23 +138,83 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
 
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
     </style>
 </head>
-    
+
 <body>
 <header>
     <div class="container">
@@ -171,9 +231,6 @@
 
     <nav>
         <h3>이온주입 공정 (Ion Implantation)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
     </nav>
 </header>
 
@@ -181,19 +238,71 @@
     <div class="section">
         <h2>1. 개요</h2>
         <div class="card">
+            <span class="tag">기초 개념</span>
             <ul>
-                <li>반도체가 전기적인 특성을 갖도록 만드는 과정</li>
-                <li>전기가 통하는 도체와, 통하지 않는 부도체의 성질을 동시에 가진 반도체</li>
-                <li>순수한 반도체는 규소로 되어있어 전기가 통하지 않으나 불순물을 넣어줘 전류를 흐르게하는 전도성을 갖게 되는 것</li>
-                <li>이때 불순물을 이온(Ion)이라고 함</li>
-                    <div class="li-desc">15족 원소 인(P), 비소(As), 13족 원소 붕소(B)등을 사용</div>
-                    <div class="li-desc">N형 반도체 = 15족 원소를 주입한 반도체</div>
-                    <div class="li-desc">P형 반도체 = 13족 원소를 주입한 반도체</div>
-                <li>도핑(Doping) = 전기가 잘 흐르게 하거나, 특정 방향으로만 흐르게 만드는 과정 = 이온주입 공정</li>
-                
-              <div class="img-box">
-                    <img src="../../images/ion_implantation.png" alt="이온주입">
-                </div>
+                <li>반도체가 원하는 전기적인 특성을 갖도록 만드는 과정이다</li>
+                <li>반도체는 전기가 통하는 도체와 통하지 않는 부도체의 성질을 동시에 가진 물질이다</li>
+                <li>순수한 반도체(규소)는 그 자체로는 전기가 거의 통하지 않지만, 불순물을 넣어 전류가 흐르게 함으로써 원하는 만큼 전도성을 갖게 만들 수 있다</li>
+                <li>이때 실리콘에 주입하는 불순물을 도펀트(Dopant)라고 하며, 이온주입 공정에서는 이 도펀트를 이온 상태로 만들어(이온화하여) 실리콘 내부로 주입한다</li>
+                    <div class="li-desc">15족 원소 인(P), 비소(As), 13족 원소 붕소(B) 등을 사용한다</div>
+                    <div class="li-desc">N형 반도체 = 15족 원소를 주입한 반도체 (전자가 남아 전류를 나름)</div>
+                    <div class="li-desc">P형 반도체 = 13족 원소를 주입한 반도체 (전자가 부족한 빈자리, 즉 정공이 전류를 나름)</div>
+                <li>도핑(Doping)이란 반도체에 불순물을 넣어 전기가 잘 흐르게 하거나 특정 방향으로만 흐르게 만드는 과정을 말하며, 이온주입은 이 도핑을 구현하는 대표적인 방법 중 하나다 (도핑 = 목적, 이온주입 = 그 목적을 이루는 구체적인 방법)</li>
+
+              <div class="svg-box" style="max-width:700px; margin:16px auto;">
+                <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+                    <text x="130" y="20" text-anchor="middle" fill="#e5e7eb" font-size="11" font-weight="700">순수 실리콘 (Intrinsic Si)</text>
+                    <line x1="75" y1="110" x2="185" y2="110" stroke="#374151" stroke-width="2"/>
+                    <line x1="130" y1="55" x2="130" y2="165" stroke="#374151" stroke-width="2"/>
+                    <circle cx="75" cy="110" r="13" fill="#6366f1"/><text x="75" y="114" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="185" cy="110" r="13" fill="#6366f1"/><text x="185" y="114" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="130" cy="55" r="13" fill="#6366f1"/><text x="130" y="59" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="130" cy="165" r="13" fill="#6366f1"/><text x="130" y="169" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="130" cy="110" r="15" fill="#6366f1" stroke="#e5e7eb"/><text x="130" y="114" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">Si</text>
+                    <text x="130" y="200" text-anchor="middle" fill="#9ca3af" font-size="9">모든 원자가 이웃과</text>
+                    <text x="130" y="213" text-anchor="middle" fill="#9ca3af" font-size="9">4개의 공유결합 → 자유 전하 없음</text>
+
+                    <line x1="350" y1="220" x2="350" y2="30" stroke="#1f2937"/>
+
+                    <text x="350" y="20" text-anchor="middle" fill="#e5e7eb" font-size="11" font-weight="700">N형 반도체 (인(P) 도핑)</text>
+                    <line x1="295" y1="110" x2="405" y2="110" stroke="#374151" stroke-width="2"/>
+                    <line x1="350" y1="55" x2="350" y2="165" stroke="#374151" stroke-width="2"/>
+                    <circle cx="295" cy="110" r="13" fill="#6366f1"/><text x="295" y="114" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="405" cy="110" r="13" fill="#6366f1"/><text x="405" y="114" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="350" cy="55" r="13" fill="#6366f1"/><text x="350" y="59" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="350" cy="165" r="13" fill="#6366f1"/><text x="350" y="169" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="350" cy="110" r="15" fill="#22c55e" stroke="#e5e7eb"/><text x="350" y="114" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">P</text>
+                    <circle cx="385" cy="80" r="5" fill="#38bdf8"/>
+                    <path d="M375 90 L385 80" stroke="#38bdf8" stroke-width="1" stroke-dasharray="1,2"/>
+                    <text x="415" y="70" fill="#38bdf8" font-size="9">자유전자(e⁻)</text>
+                    <text x="350" y="200" text-anchor="middle" fill="#9ca3af" font-size="9">여분의 전자 1개가 자유롭게 이동</text>
+                    <text x="350" y="213" text-anchor="middle" fill="#9ca3af" font-size="9">→ 전자가 전류를 나름</text>
+
+                    <line x1="570" y1="220" x2="570" y2="30" stroke="#1f2937"/>
+
+                    <text x="570" y="20" text-anchor="middle" fill="#e5e7eb" font-size="11" font-weight="700">P형 반도체 (붕소(B) 도핑)</text>
+                    <line x1="515" y1="110" x2="625" y2="110" stroke="#374151" stroke-width="2"/>
+                    <line x1="570" y1="55" x2="570" y2="95" stroke="#374151" stroke-width="2"/>
+                    <line x1="570" y1="125" x2="570" y2="165" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,3"/>
+                    <circle cx="515" cy="110" r="13" fill="#6366f1"/><text x="515" y="114" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="625" cy="110" r="13" fill="#6366f1"/><text x="625" y="114" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="570" cy="55" r="13" fill="#6366f1"/><text x="570" y="59" text-anchor="middle" fill="#ffffff" font-size="9">Si</text>
+                    <circle cx="570" cy="165" r="13" fill="none" stroke="#9ca3af" stroke-dasharray="2,2"/>
+                    <circle cx="570" cy="110" r="15" fill="#f59e0b" stroke="#e5e7eb"/><text x="570" y="114" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">B</text>
+                    <text x="615" y="185" fill="#9ca3af" font-size="9">정공(Hole, +)</text>
+                    <text x="570" y="200" text-anchor="middle" fill="#9ca3af" font-size="9">전자가 빈 자리(정공) 1개 발생</text>
+                    <text x="570" y="213" text-anchor="middle" fill="#9ca3af" font-size="9">→ 정공이 전류를 나름</text>
+
+                    <text x="350" y="245" text-anchor="middle" fill="#9ca3af" font-size="10">N형은 전자가, P형은 정공이 전하를 운반한다 — 이 둘을 조합해 트랜지스터(스위치)를 만든다</text>
+                </svg>
+              </div>
+
+              <div class="note">
+                <strong>💡 도핑을 쉽게 이해하기</strong><br>
+                순수한 물은 전기가 잘 안 통하지만, 소금을 살짝 녹이면 전기가 통하게 된다. 반도체의 도핑도 비슷한 원리다.
+                순수 실리콘에 특정 불순물(도펀트)을 아주 정밀하게 '살짝' 넣어주면, 전기가 흐르는 정도와 방향을 사람이 원하는 대로
+                조절할 수 있게 된다. 이 조절 능력 덕분에 트랜지스터라는 전기 스위치를 만들 수 있다.
+              </div>
             </ul>
         </div>
     </div>
@@ -201,17 +310,60 @@
     <div class="section">
         <h2>2. 공정의 흐름</h2>
         <div class="card">
+            <div class="svg-box">
+                <svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg">
+                    <text x="320" y="20" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">이온주입 공정 개념도</text>
+
+                    <text x="90" y="45" text-anchor="middle" fill="#9ca3af" font-size="10">① 이온 생성</text>
+                    <circle cx="90" cy="70" r="16" fill="rgba(99,102,241,0.3)" stroke="#6366f1"/>
+                    <text x="90" y="74" text-anchor="middle" fill="#e5e7eb" font-size="9">Plasma</text>
+
+                    <path d="M110 70 L150 70" stroke="#6366f1" stroke-width="2"/>
+                    <polygon points="150,64 162,70 150,76" fill="#6366f1"/>
+                    <text x="130" y="55" text-anchor="middle" fill="#9ca3af" font-size="9">② 추출</text>
+
+                    <rect x="170" y="55" width="60" height="30" fill="#111827" stroke="#374151"/>
+                    <text x="200" y="73" text-anchor="middle" fill="#e5e7eb" font-size="9">Mass</text>
+                    <text x="200" y="45" text-anchor="middle" fill="#9ca3af" font-size="9">③ 질량 분석</text>
+
+                    <path d="M230 70 Q260 40 290 70" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+                    <path d="M230 70 Q260 100 290 70" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="2,2"/>
+                    <text x="260" y="105" text-anchor="middle" fill="#9ca3af" font-size="8">불필요 이온은 다르게 휘어 제거됨</text>
+
+                    <path d="M290 70 L340 70" stroke="#6366f1" stroke-width="2"/>
+                    <polygon points="340,64 352,70 340,76" fill="#6366f1"/>
+                    <text x="315" y="55" text-anchor="middle" fill="#9ca3af" font-size="9">④ 가속</text>
+
+                    <path d="M360 70 L420 70" stroke="#22c55e" stroke-width="3"/>
+                    <polygon points="420,63 434,70 420,77" fill="#22c55e"/>
+                    <text x="390" y="55" text-anchor="middle" fill="#22c55e" font-size="9">⑤ 주입(Implant)</text>
+
+                    <rect x="440" y="30" width="20" height="20" fill="#374151"/>
+                    <rect x="500" y="30" width="20" height="20" fill="#374151"/>
+                    <text x="480" y="25" text-anchor="middle" fill="#9ca3af" font-size="8">감광액 마스크(PR)</text>
+                    <rect x="440" y="50" width="120" height="20" fill="#111827" stroke="#374151"/>
+                    <text x="500" y="64" text-anchor="middle" fill="#9ca3af" font-size="9">웨이퍼(Si)</text>
+                    <circle cx="475" cy="60" r="2" fill="#22c55e"/>
+                    <circle cx="475" cy="65" r="2" fill="#22c55e"/>
+                    <circle cx="475" cy="70" r="2" fill="#22c55e"/>
+
+                    <path d="M400 130 C420 100 460 180 500 150 C540 120 560 180 580 150" fill="none" stroke="#6366f1" stroke-width="2"/>
+                    <text x="480" y="195" text-anchor="middle" fill="#9ca3af" font-size="9">주입 깊이 분포 (가우시안 형태) — Rp = 평균 침투 깊이</text>
+                </svg>
+                <div style="margin-top:8px; font-size:12px; color:#9ca3af;">※ 마스크로 가려지지 않은 영역에만 이온이 정해진 깊이로 주입된다</div>
+            </div>
+
             <h3>＊ 원자의 종류</h3>
             <ul>
-                <li>N형 도핑 : 전자 증가, 대표적으로 Phosphorus (P), Arsenic (As)</li>
-                <li>P형 도핑 : 정공 증가, 대표적으로 Boron(B)</li>
+                <li>N형 도핑 : 전자 증가, 대표적으로 인(Phosphorus, P), 비소(Arsenic, As)</li>
+                <li>P형 도핑 : 정공 증가, 대표적으로 붕소(Boron, B)</li>
                 <li>핵심 원리</li>
-                  <div class="li-desc">"이온을 전기적으로 가속해서 실리콘에 충돌시킴"</div>
+                  <div class="li-desc">"이온을 전기적으로 가속해서 실리콘에 충돌시킨다"</div>
             </ul>
             <h3>① 이온 생성 (Ion Source)</h3>
             <ul>
-                <li>목적 : 도핑 원자를 이온화</li>
-                <li>고온의 플라즈마를 사용하여 전자 충돌로 이온을 생성</li>
+                <li>목적 : 도핑 원자를 이온화한다</li>
+                <li>전자 충돌 방식의 플라즈마를 사용하여 도핑 원료 가스로부터 이온을 생성한다</li>
                 <li>예시</li>
                   <div class="li-desc">BF3 → B+</div>
                   <div class="li-desc">PH3 → P+</div>
@@ -219,29 +371,44 @@
             </ul>
             <h3>② 이온 추출 (Extraction)</h3>
             <ul>
-                <li>생성된 이온을 전압을 인가하여 전기장으로 끌어냄 → Ion beam 생성</li>
+                <li>생성된 이온을 전압을 인가하여 전기장으로 끌어내며, 이 과정에서 Ion beam이 만들어진다</li>
             </ul>
             <h3>③ Mass Analyzer ★★★</h3>
             <ul>
-                <li>Ion source에는 원하는 이온 + 불순물이 다 섞여 있음</li>
-                  <div class="li-desc">B+, BF2+, 기타 이온</div>
-                <li>자기장을 사용하여 질량마다 휘는 정도가 다른 이온의 특성을 이용하여 원하는 이온을 걸러낸다</li>
-                <li>로렌츠 힘 : F = q(v X B)</li>
-                <li>질량이 작은 것은 많이 휘고, 질량이 큰 것은 상대적으로 덜 휨</li>
+                <li>Ion source에는 원하는 이온 외에 불순물 이온도 섞여 있다</li>
+                  <div class="li-desc">B+, BF2+ 등 기타 이온</div>
+                <li>자기장을 사용해, 질량마다 휘는 정도가 다른 이온의 특성을 이용하여 원하는 이온만 걸러낸다</li>
+                <li>로렌츠 힘 : F = q(v × B)</li>
+                <li>질량이 작은 이온은 많이 휘고, 질량이 큰 이온은 상대적으로 덜 휜다</li>
             </ul>
             <h3>④ Acceleration ★★★</h3>
             <ul>
-                <li>실리콘 내부에 침투시키기 위해 이온을 고속으로 가속 시킴</li>
-                <li>에너지 = 침투깊이, 에너지가 높을수록 더 깊이 들어감 (에너지의 범위 : 수 keV ~ MeV)</li>
+                <li>실리콘 내부에 침투시키기 위해 이온을 고속으로 가속시킨다</li>
+                <li>에너지 = 침투깊이, 에너지가 높을수록 더 깊이 들어간다 (에너지 범위 : 수 keV ~ MeV)</li>
             </ul>
            <h3>⑤ Implantation</h3>
             <ul>
-                <li>가속 시킨 이온을 웨이퍼에 충돌시켜 주입 시키는 과정</li>
-                <li>이온이 Si(규소) 내부 원자와 충돌하면서 에너지를 잃고 특정 깊이에서 멈추게 됨</li>
+                <li>가속시킨 이온을 웨이퍼에 충돌시켜 주입시키는 과정이다</li>
+                <li>이온이 Si(규소) 내부 원자와 충돌하면서 에너지를 잃고, 특정 깊이에서 멈추게 된다</li>
                 <li>Projected Range (Rp) = 평균 침투 깊이</li>
-                <li>분포 형태는 완벽히 일정하지 않고, 가우시안 분포와 비슷한 형태</li>
+                <li>분포 형태는 완벽히 일정하지 않고, 가우시안 분포와 비슷한 형태를 띤다</li>
             </ul>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : 이온주입과 광학 검사의 접점</strong><br>
+                이온주입 자체는 전기·물리적 공정이라 카메라가 직접 관여하는 부분은 상대적으로 적지만, 주입 결과를 확인하는 데는
+                광학 기반 비접촉 계측 기법이 쓰인다. 대표적으로 레이저로 웨이퍼 표면을 국소 가열한 뒤, 이온주입으로 생긴 결정 손상
+                정도에 따라 달라지는 반사율 변화를 측정해 도즈(주입량)를 간접적으로 추정하는 열파(Thermal Wave) 반사율 측정 방식이
+                실제 양산 라인에서 사용된다. 또한 이온주입은 감광액으로 만든 마스크의 특정 영역에만 이온이 들어가도록 하는 방식이라,
+                주입 전 단계에서 마스크 패턴이 설계대로 정렬되었는지 확인하는 오버레이 검사는 포토 공정과 마찬가지로 머신비전 기반
+                AOI가 담당하며, 주입 후에는 웨이퍼 표면의 파티클 오염 여부를 표준 AOI 장비로 검사한다.
+            </div>
         </div>
+    </div>
+
+    <div class="card nav-row">
+        <a href=".\semiconductor_deposition.html" class="detail-btn"><span class="arrow">←</span> 이전 : 증착 공정 (Deposition)</a>
+        <a href=".\semiconductor_metal_interconnect.html" class="detail-btn">다음 : 금속 배선 공정 (Metal Interconnect) <span class="arrow">→</span></a>
     </div>
 </section>
 

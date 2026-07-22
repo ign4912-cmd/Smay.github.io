@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -50,11 +50,11 @@
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -138,20 +138,80 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
 
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
     </style>
 </head>
 
@@ -172,9 +232,6 @@
 
     <nav>
         <h3>패키징 공정 (Packaging)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
     </nav>
 </header>
 
@@ -182,12 +239,13 @@
     <div class="section">
         <h2>1. 개요</h2>
         <div class="card">
+            <span class="tag">기초 개념</span>
             <ul>
-                <li>반도체 칩이 외부와 신호를 주고 받을 수 있도록 길을 만들고, 다양한 외부환경으로부터 안전하게 보호받는 형태로 만드는 과정</li>
-                    <div class="li-desc">베어칩(Bare chip) or 다이(Die) : 완성된 웨이퍼의 반도체 칩을 낱개로 하나하나 잘라낸 것</div>
-                    <div class="li-desc">베어칩은 외부와 전기신호를 주고 받을 수 없으며, 외부 충격에 손상되기 쉬움</div>
-                    <div class="li-desc">즉, 직접회로(IC)가 기판이나 전자기기에 장착되기 위해선 그에 맞는 포장이 필요</div>
-                <li>집적회로와 전자기기를 연결하고 고온, 고습, 화학약품, 진동/충격 등의 외부환경으로부터 회로를 보호하기 위한 공정</li>
+                <li>반도체 칩이 외부와 신호를 주고받을 수 있도록 길을 만들고, 다양한 외부 환경으로부터 안전하게 보호받는 형태로 만드는 과정이다</li>
+                    <div class="li-desc">베어칩(Bare chip) 또는 다이(Die) : 완성된 웨이퍼에서 반도체 칩을 낱개로 하나하나 잘라낸 것</div>
+                    <div class="li-desc">베어칩은 그 자체로는 외부와 전기신호를 주고받을 수 없으며, 외부 충격에도 손상되기 쉽다</div>
+                    <div class="li-desc">즉, 직접회로(IC)가 기판이나 전자기기에 장착되려면 그에 맞는 '포장(패키지)'이 필요하다</div>
+                <li>집적회로와 전자기기를 연결하고, 고온·고습·화학약품·진동/충격 등의 외부 환경으로부터 회로를 보호하기 위한 공정이다. 비유하자면 정밀한 회로 칩을 튼튼한 케이스에 넣고 외부와 연결할 다리(핀)를 달아주는 작업이라고 볼 수 있다</li>
             </ul>
         </div>
     </div>
@@ -200,10 +258,10 @@
                 <div class="img-box">
                         <img src="../../images/packaging_wafercutting.png" alt="웨이퍼절단">
                 </div>
-                <li>웨이퍼를 낱개의 칩으로 분리하는 과정</li>
-                <li>웨이퍼에는 수백 개의 칩이 촘촘히 배열되어 있고, 각 칩은 스크라이브 라인(Scribe Line)으로 구분</li>
-                <li>다이아몬드 톱이나 레이저 광선을 이용하여 스크라이브 라인을 따라 절단</li>
-                <li>웨이퍼 절단 작업은 '웨이퍼 소잉(Wafer Sawing)'이나, '다이싱(Dicing)'이라 불림</li>
+                <li>웨이퍼를 낱개의 칩으로 분리하는 과정이다</li>
+                <li>웨이퍼에는 수백 개의 칩이 촘촘히 배열되어 있고, 각 칩은 스크라이브 라인(Scribe Line)으로 구분된다</li>
+                <li>다이아몬드 톱이나 레이저 광선을 이용하여 스크라이브 라인을 따라 절단한다</li>
+                <li>웨이퍼 절단 작업은 '웨이퍼 소잉(Wafer Sawing)' 또는 '다이싱(Dicing)'이라 불린다</li>
                 <li>주요 업체</li>
                     <div class="li-desc">소잉 장비 업체 : 일본(Disco), 한국(한미반도체)</div>
                     <div class="li-desc">레이저 커팅 장비 업체 : 이오테크닉스 (레이저에 특화된 사업체)</div>
@@ -213,8 +271,8 @@
                 <div class="img-box">
                         <img src="../../images/packaging_dieattach.png" alt="리드프레임">
                 </div>
-                <li>절단된 칩들은 리드프레임(Lead Frame) 또는 PCB(Printed Circuit Board) 위에 옮겨 짐</li>
-                <li>리드프레임은 반도체 칩과 외부 회로 간 전기신호를 전달하고, 외부 환경으로부터 칩을 보호, 지지해주는 골격 역할을 함</li>
+                <li>절단된 칩들은 리드프레임(Lead Frame) 또는 PCB(Printed Circuit Board) 위로 옮겨진다</li>
+                <li>리드프레임은 반도체 칩과 외부 회로 간 전기신호를 전달하고, 외부 환경으로부터 칩을 보호·지지해주는 골격 역할을 한다</li>
                 <li>주요 업체</li>
                     <div class="li-desc">리드프레임 제작 업체 : 해성디에스</div>
             </ul>
@@ -223,19 +281,45 @@
                 <div class="img-box">
                         <img src="../../images/packaging_goldenline.png" alt="금선연결">
                 </div>
-                <li>반도체의 전기적 특성을 위해 기판 위에 올려진 반도체 칩의 접점과 기판의 접점을 가는 금선을 사용하여 연결하는 공정</li>
-                <li>'와이어 본딩(Wire Bonding)' 방식</li>
-                <li>전통적인 와이어본딩 방식 외에 반도체의 속도를 향상시키기 위해 칩의 회로와 기판을 직접 볼 형태의 범프(Bump)로 연결하는 패키징 방식</li>
-                <li>'플립칩(Flip Chip)' 방식</li>
+                <li>반도체의 전기적 특성을 위해, 기판 위에 올려진 반도체 칩의 접점과 기판의 접점을 가는 금선을 사용하여 연결하는 공정이다</li>
+                <li>이를 '와이어 본딩(Wire Bonding)' 방식이라 한다</li>
+                <li>전통적인 와이어본딩 방식 외에, 반도체의 속도를 향상시키기 위해 칩의 회로와 기판을 직접 볼(Ball) 형태의 범프(Bump)로 연결하는 패키징 방식도 있다</li>
+                <li>이를 '플립칩(Flip Chip)' 방식이라 한다</li>
                 <li>FC-BGA(Flip Chip - Ball Grid Array) 기판 참고</li>
-                <div class="img-box">
-                        <img src="../../images/packaging_wirebonding.png" alt="와이어본딩과 플립칩">
+
+                <div class="svg-box">
+                    <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+                        <text x="150" y="20" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">와이어 본딩</text>
+                        <rect x="60" y="120" width="180" height="20" fill="#111827" stroke="#374151"/>
+                        <text x="150" y="135" text-anchor="middle" fill="#9ca3af" font-size="9">기판(Substrate)</text>
+                        <rect x="100" y="80" width="100" height="40" fill="#111827" stroke="#6366f1" stroke-width="2"/>
+                        <text x="150" y="103" text-anchor="middle" fill="#e5e7eb" font-size="9">칩(Die)</text>
+                        <path d="M105 80 Q80 55 65 120" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                        <path d="M195 80 Q220 55 235 120" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="150" y="160" text-anchor="middle" fill="#9ca3af" font-size="9">칩이 위를 향하고, 금선(활 모양)으로 기판과 연결</text>
+
+                        <line x1="320" y1="30" x2="320" y2="200" stroke="#1f2937"/>
+
+                        <text x="480" y="20" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">플립칩(Flip Chip)</text>
+                        <rect x="400" y="120" width="180" height="20" fill="#111827" stroke="#374151"/>
+                        <text x="490" y="135" text-anchor="middle" fill="#9ca3af" font-size="9">기판(Substrate)</text>
+                        <rect x="440" y="70" width="100" height="30" fill="#111827" stroke="#6366f1" stroke-width="2"/>
+                        <text x="490" y="88" text-anchor="middle" fill="#e5e7eb" font-size="9">칩(Die, 뒤집힘)</text>
+                        <circle cx="455" cy="108" r="6" fill="#f59e0b"/>
+                        <circle cx="475" cy="108" r="6" fill="#f59e0b"/>
+                        <circle cx="495" cy="108" r="6" fill="#f59e0b"/>
+                        <circle cx="515" cy="108" r="6" fill="#f59e0b"/>
+                        <circle cx="535" cy="108" r="6" fill="#f59e0b"/>
+                        <text x="490" y="160" text-anchor="middle" fill="#9ca3af" font-size="9">칩을 뒤집어(Flip), 범프(볼)로 기판과 바로 연결</text>
+                    </svg>
+                    <div style="margin-top:8px; font-size:12px; color:#9ca3af;">※ 플립칩은 배선 길이가 짧아 전기저항이 작고 속도가 빠르며, 패키지 크기(Form Factor)도 줄일 수 있다</div>
                 </div>
-                <li>플립칩 방식의 장점 : 전기저항이 작고 속도가 빠르며, 작은 폼팩터(Form Factor) 구현이 가능</li>
-                <li>범프의 소재로는 주로 금(Au) 또는 솔더(Solder, 주석/납/은 화합물)가 사용됨</li>
+
+                <li>플립칩 방식의 장점 : 전기저항이 작고 속도가 빠르며, 작은 폼팩터(Form Factor) 구현이 가능하다</li>
+                <li>범프의 소재로는 주로 금(Au) 또는 솔더(Solder, 주석/납/은 화합물)가 사용된다</li>
                 <li>주요 업체</li>
                     <div class="li-desc">FC-BGA 기판 제작 업체 : 삼성전기, LG이노텍, 심텍, 대덕전자 등</div>
-                    <div class="li-desc">펌프 제작 업체 : MK전자, 덕산하이메탈</div>
+                    <div class="li-desc">범프 제작 업체 : MK전자, 덕산하이메탈</div>
                     <div class="li-desc">다이 본딩 업체 : 프로텍</div>
                     <div class="li-desc">HBM TC본더 : 한미반도체</div>
             </ul>
@@ -244,20 +328,35 @@
                 <div class="img-box">
                         <img src="../../images/packaging_molding.png" alt="성형공정">
                 </div>
-                <li>열, 습기 등의 물리적인 환경으로부터 반도체 집적회로를 보호하고, 원하는 형태의 패키지로 만들기 위한 공정</li>
-                <li>금선 연결까지 끝난 반도체 칩을 화학수지로 밀봉하는 공정을 거치면 우리가 흔히 보는 반도체가 됨</li>
+                <li>열, 습기 등의 물리적인 환경으로부터 반도체 집적회로를 보호하고, 원하는 형태의 패키지로 만들기 위한 공정이다</li>
+                <li>금선 연결까지 끝난 반도체 칩을 화학수지로 밀봉하는 공정을 거치면, 우리가 흔히 보는 검은색 반도체 패키지가 된다</li>
             </ul>
             <h3>⑤ 테스트(Testing) 공정</h3>
             <ul>
                 <div class="img-box">
                         <img src="../../images/packaging_test.png" alt="테스트">
                 </div>
-                <li>패키징 공정이 완료되면 반도체 제품의 최종 불량유무를 선별하는 패키지 테스트(Package Test)를 시행</li>
-                <li>완제품 형태를 갖춘 후에 검사를 진행하기 때문에 '파이널 테스트(Final Test)'라고도 함</li>
-                <li>반도체를 검사장비(Tester)에 넣고 다양한 조건의 전압이나 전기신호, 온도, 습도 등을 가해 제품의 전기적 특성, 기능적 특성, 동작 속도 등을 측정</li>
-                <li>테스트 데이터를 분석해 제조공정이나 조립공정에 피드백함으로써 제품의 질을 개선하는 역할도 함</li>
+                <li>패키징 공정이 완료되면, 반도체 제품의 최종 불량 유무를 선별하는 패키지 테스트(Package Test)를 시행한다</li>
+                <li>완제품 형태를 갖춘 후에 검사를 진행하기 때문에 '파이널 테스트(Final Test)'라고도 한다</li>
+                <li>반도체를 검사장비(Tester)에 넣고, 다양한 조건의 전압이나 전기신호, 온도, 습도 등을 가해 제품의 전기적 특성, 기능적 특성, 동작 속도 등을 측정한다</li>
+                <li>테스트 데이터를 분석해 제조공정이나 조립공정에 피드백함으로써, 제품의 질을 개선하는 역할도 한다</li>
             </ul>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : 패키징 공정과 머신비전</strong><br>
+                패키징 공정은 웨이퍼 공정 못지않게 머신비전 검사 장비가 폭넓게 쓰이는 영역이다. 와이어 본딩 직후에는 금선의
+                루프 높이(Loop Height)와 형상, 본딩 위치가 설계 기준을 만족하는지 3D 비전으로 검사하고, 플립칩/범프 공정에서는
+                수많은 범프 하나하나의 높이·크기가 균일한지, 빠지거나 찌그러진 범프는 없는지 3D AOI로 전수 검사한다. 성형(Molding)
+                공정 이후에는 패키지 표면의 크랙, 보이드(내부 공극), 마킹(제품 각인) 상태를 광학 검사로 확인하며, 내부 결함은
+                X-ray 검사 장비로 추가 확인하기도 한다. 이처럼 패키징 단계는 다이싱 → 다이 어태치 → 본딩 → 몰딩 → 최종 테스트에
+                이르기까지, 각 공정 직후마다 전용 비전 검사 장비가 배치되는 것이 일반적이다.
+            </div>
         </div>
+    </div>
+
+    <div class="card nav-row">
+        <a href=".\semiconductor_electrical_die_sorting.html" class="detail-btn"><span class="arrow">←</span> 이전 : EDS 공정 (Electrical Die Sorting)</a>
+        <a href=".\semiconductor_process.html" class="detail-btn">처음으로 : 반도체 공정의 이해 <span class="arrow">→</span></a>
     </div>
 </section>
 

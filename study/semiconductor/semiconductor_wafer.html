@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -75,11 +75,11 @@
             margin-bottom: 20px;
         }
 
-            .section h2 { 
-                font-size: 22px; 
-                margin-bottom: 15px; 
-                border-left: 4px solid var(--primary); 
-                padding-left: 10px; 
+            .section h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+                border-left: 4px solid var(--primary);
+                padding-left: 10px;
             }
 
         .hero {
@@ -160,19 +160,19 @@
                 font-size: 14px;
             }
 
-            .card ul { 
-                padding-left: 20px; 
-            } 
-        
-            .card li { 
+            .card ul {
+                padding-left: 20px;
+            }
+
+            .card li {
                 margin-top: 4px;
-                margin-bottom: 8px; 
+                margin-bottom: 8px;
                 padding-left: 5px;
-                color: var(--sub); 
+                color: var(--sub);
                 display: block;
-            } 
-               
-            .card li-desc { 
+            }
+
+            .card li-desc {
                 margin-top: 4px; font-size: 13px; color: var(--sub); padding-left: 15px; display: block;
             }
 
@@ -216,16 +216,16 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
@@ -234,18 +234,79 @@
           margin: 12px 0 16px;
           text-align: center;
         }
-        
+
         .img-box img {
           width: 100%;
           max-width: 600px;
           border-radius: 10px;
           border: 1px solid #1f2937;
         }
-        
+
         .img-caption {
           margin-top: 6px;
           font-size: 13px;
           color: var(--sub);
+        }
+
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
     </style>
 </head>
@@ -265,70 +326,177 @@
 
         <nav>
             <h3>Wafer 제조 공정</h3>
-            <!--<ul>
-                <li><a href="#projects">네이게이션추가</a></li>
-            </ul>-->
         </nav>
     </header>
-    
-<!--
-    <section="hero">
-        <h3>반도체 공정의 이해</h3>
-        <p3>전체 공정 흐름 및 핵심 포인트 정리</p3>
-    </section>
--->
-   
+
     <section id="section">
         <div class="section">
             <h2>1. 개요</h2>
             <div class="card">
+                <span class="tag">기초 개념</span>
                 <li>
-                    Wafer(웨이퍼)란? 반도체를 만드는 '기판(베이스판)'을 말한다.
-                    주로 실리콘(Si)로 만들어지며, 원형 판위에 회로를 그려서 제작한다.
+                    Wafer(웨이퍼)란 반도체 칩을 만드는 '기판(베이스판)'이다. 비유하자면 쿠키를 찍어내는 반죽판과 같은 존재로,
+                    이 둥근 판 위에 수백~수천 개의 반도체 회로를 그려 넣고, 나중에 하나씩 잘라내어 우리가 아는 '반도체 칩'이 된다.
                 </li>
+                <li style="margin-top:10px;">
+                    웨이퍼는 주로 실리콘(Si)으로 만들어지며, 원형 판 위에 회로를 그려서 제작한다. 실리콘을 사용하는 이유는
+                    지구상에 매우 흔하고(모래의 주성분), 전기가 통하는 정도(전도성)를 사람이 원하는 대로 조절하기 쉬운 '반도체' 성질을
+                    갖고 있기 때문이다.
+                </li>
+                <div class="note">
+                    <strong>💡 반도체 vs 도체 vs 부도체</strong><br>
+                    도체(구리처럼 전기가 항상 잘 통함)와 부도체(고무처럼 전기가 전혀 안 통함) 사이에 있는 물질이 '반도체'다.
+                    평소엔 전기가 잘 안 통하지만, 불순물을 살짝 넣어주면(도핑) 원하는 만큼만 전기가 통하도록 조절할 수 있다.
+                    이 성질 덕분에 트랜지스터라는 '전기 스위치'를 만들 수 있고, 이 스위치를 수십억 개 모은 것이 지금의 반도체 칩이다.
+                </div>
             </div>
         </div>
-            
+
         <div class="section">
-            <h2>2. 전체 공정 흐름</h2>
+            <h2>2. 전체 공정 흐름 : 잉곳에서 웨이퍼까지</h2>
             <div class="card">
-                <div class="img-box">
-                    <img src="../../images/wafer_manufacturing_process.png" alt="웨이퍼 제작 공정">
-                    <!-- <p class="img-caption">실리콘 용액을 결정 성장시켜 잉곳을 형성하는 과정</p> -->
+                <div class="svg-box" style="max-width:520px; margin:16px auto;">
+                    <svg viewBox="0 0 480 345" xmlns="http://www.w3.org/2000/svg">
+                        <text x="240" y="22" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">잉곳(Ingot) 성장 과정 예시 (초크랄스키법, CZ법)</text>
+
+                        <text x="240" y="42" text-anchor="middle" fill="#9ca3af" font-size="10">회전하며 천천히 위로 당겨 올림</text>
+                        <path d="M185 62 A55 12 0 0 1 295 62" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+                        <polygon points="291,56 301,62 289,68" fill="#9ca3af"/>
+
+                        <line x1="240" y1="76" x2="240" y2="205" stroke="#9ca3af" stroke-width="3"/>
+                        <ellipse cx="240" cy="205" rx="14" ry="5" fill="#f59e0b"/>
+
+                        <path d="M120 203 Q120 273 160 283 L320 283 Q360 273 360 203 Z" fill="none" stroke="#374151" stroke-width="2"/>
+                        <path d="M124 208 Q124 271 161 280 L319 280 Q356 271 356 208 Z" fill="rgba(245,158,11,0.35)"/>
+                        <text x="240" y="305" text-anchor="middle" fill="#9ca3af" font-size="12">도가니 속 고순도 용융 실리콘(Si melt)</text>
+
+                        <rect x="205" y="80" width="70" height="118" rx="14" fill="#111827" stroke="#6366f1" stroke-width="2"/>
+                        <text x="330" y="112" fill="#6366f1" font-size="12" font-weight="700">성장 중인</text>
+                        <text x="330" y="128" fill="#6366f1" font-size="12" font-weight="700">잉곳(Ingot)</text>
+                        <path d="M300 117 L280 117" stroke="#6366f1" stroke-width="1.5"/>
+                        <polygon points="280,113 272,117 280,121" fill="#6366f1"/>
+
+                        <text x="150" y="118" text-anchor="end" fill="#9ca3af" font-size="10">시드 결정</text>
+                        <text x="150" y="131" text-anchor="end" fill="#9ca3af" font-size="10">(Seed Crystal)</text>
+                        <path d="M155 123 L200 140" stroke="#9ca3af" stroke-width="1"/>
+
+                        <text x="240" y="328" text-anchor="middle" fill="#9ca3af" font-size="10">시드 결정을 용융 실리콘에 살짝 담근 뒤, 회전시키며 천천히 끌어올리면 원기둥 모양의 잉곳이 만들어진다</text>
+                    </svg>
                 </div>
+
+                <div class="svg-box" style="max-width:1040px;">
+                    <svg viewBox="0 0 1080 220" xmlns="http://www.w3.org/2000/svg" style="max-width:1040px;">
+                        <rect x="20" y="70" width="190" height="80" rx="10" fill="#111827" stroke="#374151"/>
+                        <text x="115" y="100" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">① 잉곳 성장</text>
+                        <text x="115" y="120" text-anchor="middle" fill="#9ca3af" font-size="11">고순도 실리콘</text>
+                        <text x="115" y="135" text-anchor="middle" fill="#9ca3af" font-size="11">용액 → 결정 성장</text>
+
+                        <path d="M210 110 L260 110" stroke="#6366f1" stroke-width="2"/>
+                        <polygon points="260,104 272,110 260,116" fill="#6366f1"/>
+
+                        <rect x="290" y="70" width="190" height="80" rx="10" fill="#111827" stroke="#374151"/>
+                        <text x="385" y="100" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">② 잉곳 절단</text>
+                        <text x="385" y="120" text-anchor="middle" fill="#9ca3af" font-size="11">다이아몬드 톱으로</text>
+                        <text x="385" y="135" text-anchor="middle" fill="#9ca3af" font-size="11">얇게 썰어냄(Slicing)</text>
+
+                        <path d="M480 110 L530 110" stroke="#6366f1" stroke-width="2"/>
+                        <polygon points="530,104 542,110 530,116" fill="#6366f1"/>
+
+                        <rect x="550" y="70" width="210" height="80" rx="10" fill="#111827" stroke="#374151"/>
+                        <text x="655" y="100" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">③ 표면 연마</text>
+                        <text x="655" y="120" text-anchor="middle" fill="#9ca3af" font-size="11">Lapping &amp; Polishing</text>
+                        <text x="655" y="135" text-anchor="middle" fill="#9ca3af" font-size="11">거울처럼 매끄럽게</text>
+
+                        <path d="M760 110 L810 110" stroke="#6366f1" stroke-width="2"/>
+                        <polygon points="810,104 822,110 810,116" fill="#6366f1"/>
+
+                        <rect x="830" y="60" width="190" height="100" rx="95" fill="#111827" stroke="#6366f1" stroke-width="2"/>
+                        <text x="925" y="105" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">Bare Wafer</text>
+                        <text x="925" y="122" text-anchor="middle" fill="#9ca3af" font-size="11">가공 전 웨이퍼</text>
+
+                        <text x="540" y="195" text-anchor="middle" fill="#9ca3af" font-size="11">※ 이후 산화 → 노광 → 식각 → 증착 → 이온주입 등의 공정이 이 웨이퍼 위에서 반복됨</text>
+                    </svg>
+                </div>
+
                 <h3 class="sub-title-h3">① 잉곳(Ingot) 만들기</h3>
                 <ul>
-                    <li>· 모래에서 추출한 실리콘을 반도체 재료로 사용하기 위해서는 순도를 높이는 정제 과정이 필요</li>
-                    <li>· 실리콘 원료를 뜨거운 열로 녹여 고순도의 실리콘 용액을 만들고 이것을 결정 성장시켜 굳이는 작업을 진행</li>
-                    <li>· 잉곳 : 위 작업을 통해 만들어진 실리콘 기둥</li>
+                    <li>· 모래에서 추출한 실리콘을 반도체 재료로 사용하기 위해서는 순도를 높이는 정제 과정이 필요하다 (일반 모래 속 실리콘 순도는 약 98~99% 수준이지만, 반도체용은 99.9999999%(나인 나인, 9N) 이상까지 끌어올려야 한다)</li>
+                    <li>· 실리콘 원료를 뜨거운 열로 녹여 고순도의 실리콘 용액을 만들고, 이것을 결정 성장시켜 굳히는 작업을 진행한다</li>
+                    <li>· 잉곳 : 위 작업을 통해 만들어진 원기둥 모양의 실리콘 기둥</li>
                 </ul>
                 <h3 class="sub-title-h3">② 잉곳 절단하기(Wafer Slicing)</h3>
                 <ul>
-                    <li>· 둥근 팽이 모양의 잉곳을 원판형의 웨이퍼로 만드는 과정</li>
+                    <li>· 원기둥 모양의 잉곳을 얇은 원판형의 웨이퍼로 만드는 과정</li>
                     <li>· 다이아몬드 톱을 이용해 균일한 두께로 얇게 썰어내는 작업 (잉곳의 지름이 웨이퍼의 크기를 결정)</li>
-                    <li>· 웨이퍼의 크기는 150mm(6인치), 200mm(8인치), 300mm(12인치)등이 있다.</li>
-                    <li>· 웨이퍼 두께가 얇을수록 제조원가는 줄어들며, 지름이 클 수록 생산량이 증가된다.</li>
-                    <li>· 때문에 웨이퍼의 두께와 크기는 점차 얇고 커지는 추세</li>
+                    <li>· 웨이퍼의 크기는 150mm(6인치), 200mm(8인치), 300mm(12인치) 등이 있다</li>
+                    <li>· 웨이퍼 두께가 얇을수록 제조원가는 줄어들며, 지름이 클수록 한 장의 웨이퍼에서 뽑아낼 수 있는 칩(다이) 수가 늘어 생산량이 증가한다</li>
+                    <li>· 이러한 이유로 웨이퍼의 두께는 점차 얇아지고, 지름은 점차 커지는 추세다</li>
                 </ul>
-                <h3 class="sub-title-h3">③ 웨이퍼 표면 연마(Lapping & Polishing)</h3>
+                <h3 class="sub-title-h3">③ 웨이퍼 표면 연마(Lapping &amp; Polishing)</h3>
                 <ul>
                     <li>· 절단된 웨이퍼를 가공하여 거울처럼 매끄러운 표면을 만드는 과정</li>
-                    <li>· Bare wafer(베어웨이퍼) = 가공 전의 웨이퍼</li>
+                    <li>· Bare wafer(베어웨이퍼) = 아직 회로가 그려지기 전, 가공만 끝난 웨이퍼</li>
                 </ul>
+
+                <div class="note">
+                    <strong>🔍 개발자 노트 : Bare Wafer 검사와 머신비전</strong><br>
+                    잉곳을 절단하고 연마한 직후의 Bare Wafer 단계에서도 머신비전 기반 자동광학검사(AOI)가 활발히 쓰인다.
+                    표면의 미세한 스크래치·파티클(먼지 입자)·크랙은 다크필드(Dark Field) 조명으로 산란광을 잡아 검출하고,
+                    웨이퍼의 두께 균일도나 휨(Warpage)은 라인스캔 카메라와 레이저 삼각측량 방식으로 측정한다.
+                    또한 웨이퍼 가장자리의 노치(Notch)나 플랫존(Flat) 위치를 인식해 웨이퍼를 정확한 각도로 정렬(Pre-Align)하는 것도
+                    카메라 기반 패턴 인식이 담당하는 영역이다. 이 정렬이 어긋나면 이후 노광·식각 공정에서 회로 패턴이 틀어질 수 있어
+                    정밀도가 매우 중요하다.
+                </div>
             </div>
         </div>
 
         <div class="section">
             <h2>3. 반도체 웨이퍼 명칭</h2>
             <div class="card">
-                <div class="img-box">
-                    <img src="../../images/wafer_terminology.png" alt="웨이퍼 명칭">
-                    <!-- <p class="img-caption">실리콘 용액을 결정 성장시켜 잉곳을 형성하는 과정</p> -->
+                <div class="svg-box">
+                    <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="250" cy="190" r="150" fill="#111827" stroke="#374151" stroke-width="2"/>
+
+                        <path d="M119 260 A150 150 0 0 1 119 120" fill="none" stroke="#6366f1" stroke-width="3"/>
+
+                        <line x1="120" y1="240" x2="120" y2="140" stroke="#9ca3af" stroke-width="2"/>
+
+                        <g stroke="#1f2937" stroke-width="1">
+                            <line x1="130" y1="70" x2="130" y2="310"/>
+                            <line x1="170" y1="55" x2="170" y2="325"/>
+                            <line x1="210" y1="45" x2="210" y2="335"/>
+                            <line x1="250" y1="40" x2="250" y2="340"/>
+                            <line x1="290" y1="45" x2="290" y2="335"/>
+                            <line x1="330" y1="55" x2="330" y2="325"/>
+                            <line x1="370" y1="70" x2="370" y2="310"/>
+
+                            <line x1="100" y1="130" x2="400" y2="130"/>
+                            <line x1="90" y1="160" x2="410" y2="160"/>
+                            <line x1="85" y1="190" x2="415" y2="190"/>
+                            <line x1="85" y1="220" x2="415" y2="220"/>
+                            <line x1="90" y1="250" x2="410" y2="250"/>
+                            <line x1="100" y1="280" x2="400" y2="280"/>
+                        </g>
+
+                        <rect x="245" y="185" width="36" height="26" fill="rgba(99,102,241,0.25)" stroke="#6366f1"/>
+                        <text x="330" y="200" fill="#e5e7eb" font-size="12" font-weight="700">Die (다이)</text>
+                        <line x1="281" y1="198" x2="320" y2="198" stroke="#6366f1"/>
+
+                        <line x1="250" y1="185" x2="250" y2="45" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="255" y="55" fill="#f59e0b" font-size="11">Scribe Line(스크라이브 라인)</text>
+
+                        <path d="M225 335 Q250 355 275 335" fill="none" stroke="#22c55e" stroke-width="3"/>
+                        <text x="250" y="370" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="700">Notch(노치)</text>
+
+                        <text x="60" y="100" fill="#9ca3af" font-size="11">Flat Zone</text>
+                        <text x="60" y="113" fill="#9ca3af" font-size="10">(구형 웨이퍼)</text>
+                    </svg>
+                    <div style="margin-top:8px; font-size:12px; color:#9ca3af;">※ 웨이퍼 표면은 격자처럼 나뉜 다이(Die)들과, 그 사이를 가르는 스크라이브 라인, 방향 기준점인 노치로 구성된다</div>
                 </div>
-                
+
                 <h3 class="sub-title-h3">웨이퍼 (Wafer)</h3>
                 <ul>
-                    <li>· 도체 소자의 기반이 되는 실리콘 원형 기판</li>
+                    <li>· 반도체 소자의 기반이 되는 실리콘 원형 기판</li>
                     <li>· 표면에 수백~수천 개의 칩이 형성되며, 모든 공정(노광, 식각, 증착 등)이 이 위에서 진행됨</li>
                     <li>· 일반적으로 200mm, 300mm 등의 규격으로 생산됨</li>
                 </ul>
@@ -348,27 +516,41 @@
                 <ul>
                     <li>· 웨이퍼 가장자리를 일부 직선으로 절삭한 부분</li>
                     <li>· 웨이퍼의 결정 방향 및 타입(P/N형 등) 식별 기준으로 사용됨</li>
-                    <li>· 주로 초기(구형) 웨이퍼에서 사용되던 방식</li>                       
+                    <li>· 주로 초기(구형) 웨이퍼에서 사용되던 방식</li>
                 </ul>
               <h3 class="sub-title-h3">노치 (Notch)</h3>
                 <ul>
                     <li>· 웨이퍼 가장자리에 있는 작은 홈 형태의 표시</li>
                     <li>· 플랫존을 대체하여 사용되는 정렬 및 방향 식별 기준</li>
-                    <li>· 자동화 장비에서 웨이퍼 방향 인식에 활용됨</li>                        
+                    <li>· 자동화 장비에서 웨이퍼 방향 인식에 활용됨</li>
                 </ul>
+
+                <div class="note">
+                    <strong>🔍 개발자 노트 : 다이 단위 검사의 시작점</strong><br>
+                    이 절에서 정의된 '다이' 개념은 이후 공정 전반의 머신비전 검사 기준 단위가 된다. 대부분의 AOI 장비는
+                    웨이퍼 전체를 한 번에 보는 것이 아니라, 다이 하나하나를 좌표(맵)에 따라 순차 촬영·비교하는 방식(Die-to-Die,
+                    또는 기준 이미지와 비교하는 Die-to-Database 방식)으로 결함을 찾는다. 스크라이브 라인은 실제 회로가 없는
+                    영역이라 검사에서 제외되는 경우가 많고, 노치 위치는 웨이퍼 방향을 맞추는 정렬 기준으로 카메라 시스템에도
+                    그대로 활용된다.
+                </div>
             </div>
             <div class="card">
                 <h3 class="sub-title-h3">기타 내용</h3>
                 <ul>
-                    <li>· 반도체 직접회로(Semiconductor Integrated circuit)와 웨이퍼의 관계 </li>
-                        <li-desc>- 반도체 직접회로란, 다양한 기능을 처리하고 저장하기 위해 많은 소자를 하나의 칩 안에 직접한 전자부품</li-desc>
-                        <li-desc>- 웨이퍼라는 기판 위에 다수의 동일 회로를 만들어 반도체 직접회로가 만들어지게 됨</li-desc>
+                    <li>· 반도체 집적회로(Semiconductor Integrated circuit)와 웨이퍼의 관계 </li>
+                        <li-desc>- 반도체 집적회로란, 다양한 기능을 처리하고 저장하기 위해 많은 소자를 하나의 칩 안에 집적한 전자부품이다</li-desc>
+                        <li-desc>- 웨이퍼라는 기판 위에 다수의 동일 회로를 만들어 반도체 집적회로가 만들어지게 됨</li-desc>
                         <li-desc>- 여담 : Silicon Valley 지명은 반도체 재료인 실리콘과 산타클라라 인근 계곡의 합성으로 만들어지게 되었음</li-desc>
                     <li>· 잉곳의 원료 </li>
-                        <li-desc>- 주로 모래에서 추출한 규소(Si)를 이용함 → 부도체 상태</li-desc>
-                        <li-desc>- 규소외에도 갈륨 아세나이드(GaAs) 등이 있음</li-desc>
+                        <li-desc>- 주로 모래에서 추출한 규소(Si)를 초고순도로 정제하여 사용함 (순수 규소 자체도 반도체 물질이며, 도핑을 거쳐야 전기적 특성이 실제로 활용됨)</li-desc>
+                        <li-desc>- 규소 외에도 갈륨 아세나이드(GaAs) 등이 있음</li-desc>
                 </ul>
             </div>
+        </div>
+
+        <div class="card nav-row">
+            <a href=".\semiconductor_process.html" class="detail-btn"><span class="arrow">←</span> 전체 공정 흐름으로</a>
+            <a href=".\semiconductor_oxidation.html" class="detail-btn">다음 : 산화 공정 (Oxidation) <span class="arrow">→</span></a>
         </div>
     </section>
 </body>

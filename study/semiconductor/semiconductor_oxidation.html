@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -75,11 +75,11 @@
             margin-bottom: 20px;
         }
 
-            .section h2 { 
-                font-size: 22px; 
-                margin-bottom: 15px; 
-                border-left: 4px solid var(--primary); 
-                padding-left: 10px; 
+            .section h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+                border-left: 4px solid var(--primary);
+                padding-left: 10px;
             }
 
         .hero {
@@ -160,19 +160,19 @@
                 font-size: 14px;
             }
 
-            .card ul { 
-                padding-left: 20px; 
-            } 
-        
-            .card li { 
+            .card ul {
+                padding-left: 20px;
+            }
+
+            .card li {
                 margin-top: 4px;
-                margin-bottom: 8px; 
+                margin-bottom: 8px;
                 padding-left: 5px;
-                color: var(--sub); 
+                color: var(--sub);
                 display: block;
-            } 
-               
-            .card li-desc { 
+            }
+
+            .card li-desc {
                 margin-top: 4px; font-size: 13px; color: var(--sub); padding-left: 15px; display: block;
             }
 
@@ -216,16 +216,16 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
@@ -234,18 +234,79 @@
           margin: 12px 0 16px;
           text-align: center;
         }
-        
+
         .img-box img {
           width: 100%;
           max-width: 600px;
           border-radius: 10px;
           border: 1px solid #1f2937;
         }
-        
+
         .img-caption {
           margin-top: 6px;
           font-size: 13px;
           color: var(--sub);
+        }
+
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
     </style>
 </head>
@@ -265,64 +326,134 @@
 
         <nav>
             <h3>산화 공정 (Oxidation)</h3>
-            <!--<ul>
-                <li><a href="#projects">네이게이션추가</a></li>
-            </ul>-->
         </nav>
     </header>
-    
-<!--
-    <section="hero">
-        <h3>반도체 공정의 이해</h3>
-        <p3>전체 공정 흐름 및 핵심 포인트 정리</p3>
-    </section>
--->
-   
+
     <section id="section">
         <div class="section">
             <h2>1. 개요</h2>
             <div class="card">
-                <li>· Wafer 제작 공정 후 부도체 상태인 wafer에 절연막 역할을 하는 산화막(SiO₂)을 형성시키는 공정</li>
-                <li>     ① 산화막은 회로와 회로 사이에 누설 전류가 흐르는 것을 차단</li>
-                <li>     ② 이온주입 공정에서 확산 방지막 역할</li>  
-                <li>     ③ 식각 공정에서 식각 방지막 역할</li>
-                <li></li>
-                <li>· 규소(Si)는 산화규소(SiO₂)를 만드는 재료역할을 하는데 이를 전구체라고 한다</li>
+                <span class="tag">기초 개념</span>
+                <li>· Wafer 제작 공정 후, 반도체 상태인 wafer 위에 절연막 역할을 하는 산화막(SiO₂, 이산화규소)을 형성시키는 공정이다.
+                    쉽게 말하면 실리콘 웨이퍼 표면에 아주 얇은 '유리 코팅'을 입히는 과정이라고 생각하면 된다.</li>
+                <li style="margin-top:10px;">이 산화막(SiO₂)은 다음과 같은 세 가지 역할을 한다.</li>
+                <li>     ① 회로와 회로 사이에 누설 전류가 흐르는 것을 차단(절연)</li>
+                <li>     ② 이온주입 공정에서 특정 영역에만 불순물이 들어가도록 막아주는 확산 방지막 역할</li>
+                <li>     ③ 식각 공정에서 원하지 않는 부분이 깎이지 않도록 보호하는 식각 방지막 역할</li>
+                <li style="margin-top:10px;">· 규소(Si)는 산소와 반응해 산화규소(SiO₂)를 만드는 재료 역할을 하는데, 이 규소를 전구체(반응 전 원료 물질)라고 한다.</li>
                 <li>     정보! 전구체를 취급하는 기업</li>
-                <li>     대표기업(국내) : DNF, LAKE MATERIALS, TEMC, CNS, 한솔 케미칼, 솔브레인 등</li>
-                <div class="img-box">
-                      <img src="../../images/oxidation_wafer.png" alt="산화막이 형성된 웨이퍼">
-                      <!-- <p class="img-caption">실리콘 용액을 결정 성장시켜 잉곳을 형성하는 과정</p> -->
+                <li>     대표기업(국내) : DNF, LAKE MATERIALS, TEMC, CNS, 한솔케미칼, 솔브레인 등</li>
+                <div class="svg-box">
+                    <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+                        <text x="320" y="25" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">웨이퍼 단면 – 산화막 형성 전/후</text>
+
+                        <rect x="80" y="90" width="180" height="50" fill="#111827" stroke="#374151" stroke-width="2"/>
+                        <text x="170" y="120" text-anchor="middle" fill="#9ca3af" font-size="12">실리콘(Si) 기판</text>
+                        <text x="170" y="165" text-anchor="middle" fill="#9ca3af" font-size="11">가공 전 (Bare Wafer)</text>
+
+                        <path d="M300 115 L360 115" stroke="#6366f1" stroke-width="2"/>
+                        <polygon points="360,109 372,115 360,121" fill="#6366f1"/>
+                        <text x="330" y="100" text-anchor="middle" fill="#9ca3af" font-size="10">O₂ / H₂O + 열</text>
+
+                        <rect x="390" y="95" width="180" height="45" fill="#111827" stroke="#374151" stroke-width="2"/>
+                        <rect x="390" y="85" width="180" height="10" fill="rgba(99,102,241,0.35)" stroke="#6366f1"/>
+                        <text x="480" y="80" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="700">SiO₂ 산화막</text>
+                        <text x="480" y="120" text-anchor="middle" fill="#9ca3af" font-size="12">실리콘(Si) 기판</text>
+                        <text x="480" y="165" text-anchor="middle" fill="#9ca3af" font-size="11">산화 공정 후</text>
+                    </svg>
+                    <div style="margin-top:8px; font-size:12px; color:#9ca3af;">※ 실리콘 표면이 산소와 반응하여 얇은 SiO₂ 막이 자라나는 개념도 (두께는 보통 수 nm~수백 nm 수준)</div>
                 </div>
             </div>
         </div>
-            
+
         <div class="section">
             <h2>2. 전체 공정 흐름</h2>
             <div class="card">
                 <h3 class="sub-title-h3">① 산화막 형성?</h3>
                 <ul>
-                    <li>· 반도체 웨이퍼는 대기 중 혹은 화학물질 내에서 산소에 노출되면 산화막을 형성</li>
+                    <li>· 반도체 웨이퍼는 대기 중 혹은 화학물질 내에서 산소에 노출되면 표면에 산화막을 형성한다</li>
                </ul>
-                
-                <div class="img-box">
-                    <img src="../../images/oxidation_method.png" alt="반도체 웨이퍼 열산화 방법">
-                    <!-- <p class="img-caption">실리콘 용액을 결정 성장시켜 잉곳을 형성하는 과정</p> -->
+
+                <div class="svg-box">
+                    <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+                        <text x="150" y="30" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">건식산화 (Dry, O₂)</text>
+                        <path d="M10 75 L40 75" stroke="#f59e0b" stroke-width="2"/>
+                        <polygon points="40,70 50,75 40,80" fill="#f59e0b"/>
+                        <text x="25" y="65" text-anchor="middle" fill="#f59e0b" font-size="9">O₂</text>
+                        <rect x="40" y="50" width="220" height="50" rx="25" fill="#111827" stroke="#374151" stroke-width="2"/>
+                        <rect x="70" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="105" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="140" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="175" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="210" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <text x="150" y="115" text-anchor="middle" fill="#9ca3af" font-size="9">웨이퍼 여러 장을 노(furnace)에 넣고 반응</text>
+
+                        <line x1="150" y1="100" x2="150" y2="130" stroke="#9ca3af" stroke-dasharray="2,2"/>
+                        <circle cx="150" cy="175" r="45" fill="#0b1120" stroke="#374151"/>
+                        <rect x="120" y="182" width="60" height="20" fill="#111827" stroke="#374151"/>
+                        <rect x="120" y="176" width="60" height="6" fill="#6366f1"/>
+                        <text x="150" y="215" text-anchor="middle" fill="#9ca3af" font-size="9">얇고 밀도 높은 산화막</text>
+
+                        <line x1="320" y1="30" x2="320" y2="235" stroke="#1f2937"/>
+
+                        <text x="490" y="30" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">습식산화 (Wet, O₂+H₂O)</text>
+                        <path d="M350 75 L380 75" stroke="#f59e0b" stroke-width="2"/>
+                        <polygon points="380,70 390,75 380,80" fill="#f59e0b"/>
+                        <text x="365" y="65" text-anchor="middle" fill="#f59e0b" font-size="9">O₂+H₂O</text>
+                        <rect x="380" y="50" width="220" height="50" rx="25" fill="#111827" stroke="#374151" stroke-width="2"/>
+                        <rect x="410" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="445" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="480" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="515" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <rect x="550" y="55" width="6" height="40" fill="#9ca3af"/>
+                        <text x="490" y="115" text-anchor="middle" fill="#9ca3af" font-size="9">수증기(H₂O)가 더해져 반응속도가 빨라짐</text>
+
+                        <line x1="490" y1="100" x2="490" y2="130" stroke="#9ca3af" stroke-dasharray="2,2"/>
+                        <circle cx="490" cy="175" r="45" fill="#0b1120" stroke="#374151"/>
+                        <rect x="460" y="182" width="60" height="20" fill="#111827" stroke="#374151"/>
+                        <rect x="460" y="168" width="60" height="14" fill="#f59e0b"/>
+                        <text x="490" y="215" text-anchor="middle" fill="#9ca3af" font-size="9">두껍지만 밀도는 낮은 산화막</text>
+
+                        <text x="320" y="252" text-anchor="middle" fill="#9ca3af" font-size="10">동일 온도·시간 기준, 습식산화는 건식산화보다 약 5~10배 더 두꺼운 막을 형성한다</text>
+                    </svg>
                 </div>
                 <h3 class="sub-title-h3">② 산화막 형성 방법</h3>
                 <ul>
-                    <li>· 열산화 (Thermal Oxidation)</li>
-                    <li>     → 산화반응에 사용되는 기체에 따라 건식산화(Dry Oxidation)와 습식산화(Wet Oxidation)으로 나뉨</li>
-                    <li>     → 건식산화는 순수한 산소(O₂)만을 이용하기 때문에 산화막 성장속도가 느려 주로 얇은 막을 형성 (전기적 특성이 좋은 산화물을 만들 수 있음)</li>
-                    <li>     → 습식산화는 산소(O₂)와 함께 용해도가 큰 수증기(H₂O)를 사용하기 때문에 성장속도가 빠르고 보다 두꺼운 막 형성 가능</li>
-                    <li>       다만, 건식 산화에 비해 산화층의 밀도가 낮음</li>
-                    <li>     → 보통 동일한 온도와 시간에서 습식산화를 통해 얻어지 산화막은 건식산화를 사용한 것보다 약 5~10배 정도 더 두꺼움</li>
-                    <li>· 플라즈마 보강</li>
-                    <li>· 화학적 기상 증착(PECVD)</li>
-                    <li>· 전기 화학적 양극 처리</li>
-                    <li>· 위 방법 이외에도 여러가지 방법들이 존재</li>
+                    <li>· 열산화 (Thermal Oxidation) : 웨이퍼를 고온(약 800~1200℃)의 노(furnace) 안에 넣고 산소 계열의 기체와 반응시켜 산화막을 성장시키는 방법</li>
+                    <li>     → 산화반응에 사용되는 기체에 따라 건식산화(Dry Oxidation)와 습식산화(Wet Oxidation)로 나뉨</li>
+                    <li>     → 건식산화는 순수한 산소(O₂)만을 이용하기 때문에 산화막 성장속도가 느려 주로 얇은 막을 형성한다 (대신 막의 밀도가 높고 전기적 특성이 좋은 산화물을 만들 수 있음)</li>
+                    <li>     → 습식산화는 산소(O₂)와 함께 용해도가 큰 수증기(H₂O)를 사용하기 때문에 성장속도가 빠르고 보다 두꺼운 막 형성이 가능하다</li>
+                    <li>       다만, 건식 산화에 비해 산화층의 밀도가 낮다</li>
+                    <li>     → 보통 동일한 온도와 시간에서 습식산화를 통해 얻어진 산화막은 건식산화를 사용한 것보다 약 5~10배 정도 더 두껍다</li>
+                    <li>· 플라즈마 보강 산화 : 플라즈마를 이용해 반응성을 높여 비교적 낮은 온도에서도 산화막을 형성하는 방법</li>
+                    <li>· 화학적 기상 증착(PECVD) 기반 산화막 형성 : 열산화가 아닌 증착 방식으로 SiO₂ 계열 막을 형성하는 방법 (다음 절 '증착 공정'과 연결되는 개념)</li>
+                    <li>· 전기 화학적 양극 처리 : 전기 화학 반응을 이용해 표면에 산화막을 형성하는 방법</li>
+                    <li>· 위 방법 이외에도 여러 가지 방법들이 존재한다</li>
                  </ul>
+
+                <table class="compare-table">
+                    <tr><th>구분</th><th>건식산화 (Dry, O₂)</th><th>습식산화 (Wet, O₂+H₂O)</th></tr>
+                    <tr><td>성장 속도</td><td>느림</td><td>빠름 (건식 대비 5~10배)</td></tr>
+                    <tr><td>막 두께</td><td>얇은 막에 적합</td><td>두꺼운 막에 적합</td></tr>
+                    <tr><td>막 밀도/품질</td><td>높음 (전기적 특성 우수)</td><td>상대적으로 낮음</td></tr>
+                    <tr><td>주 용도</td><td>게이트 산화막 등 정밀 절연층</td><td>필드 산화막 등 두꺼운 절연층</td></tr>
+                </table>
+
+                <div class="note">
+                    <strong>🔍 개발자 노트 : 산화막 두께·색상 검사와 머신비전</strong><br>
+                    산화막은 빛의 간섭 현상 때문에 두께에 따라 표면 색이 미묘하게 다르게 보인다 (과거 현장에서는 숙련 엔지니어가
+                    이 색상 차트만 보고도 산화막 두께를 눈대중으로 추정하기도 했다). 이 원리를 응용해 컬러 카메라 기반 머신비전 시스템은
+                    웨이퍼 전면의 색상 균일도를 분석해 산화막 두께가 균일하게 형성되었는지 자동으로 판별할 수 있고, 정밀 두께 측정은
+                    엘립소미터(Ellipsometer)·반사분광(Reflectometry) 같은 광학 계측 장비가 담당한다. 또한 산화막 표면의 파티클,
+                    핀홀(미세한 구멍) 결함은 브라이트필드/다크필드 조명을 조합한 AOI 장비로 검출하며, 이 결함은 이후 공정에서 누설 전류나
+                    소자 불량으로 이어질 수 있어 조기 검출이 특히 중요하다.
+                </div>
             </div>
+        </div>
+
+        <div class="card nav-row">
+            <a href=".\semiconductor_wafer.html" class="detail-btn"><span class="arrow">←</span> 이전 : Wafer 제조 공정</a>
+            <a href=".\semiconductor_photolithography.html" class="detail-btn">다음 : 포토리소그래피 (노광) <span class="arrow">→</span></a>
         </div>
     </section>
 </body>

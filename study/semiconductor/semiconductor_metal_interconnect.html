@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -50,11 +50,11 @@
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -138,20 +138,80 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
 
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
     </style>
 </head>
 
@@ -172,9 +232,6 @@
 
     <nav>
         <h3>금속 배선 공정 (Metal Interconnect)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
     </nav>
 </header>
 
@@ -182,17 +239,18 @@
     <div class="section">
         <h2>1. 개요</h2>
         <div class="card">
+            <span class="tag">기초 개념</span>
             <ul>
-                <li>반도체 회로에 전기적 신호가 잘 전달 되도록 전기길(금속선)을 연결하는 과정</li>
-                <li>전기가 잘 통하는 금속의 성질을 이용</li>
-                <li>반도체의 회로 패턴을 따라 금속선(Metal Line)을 이어주는 과정</li>
+                <li>반도체 회로에 전기적 신호가 잘 전달되도록 배선(금속선)을 연결하는 과정이다. 지금까지 만든 트랜지스터들은 각자 따로 떨어진 부품일 뿐이고, 이 부품들을 실제 회로로 동작하게 연결해주는 것이 바로 이 금속 배선이다</li>
+                <li>전기가 잘 통하는 금속의 성질을 이용한다</li>
+                <li>반도체의 회로 패턴을 따라 금속선(Metal Line)을 이어주는 과정이다</li>
                 <li>금속 재료의 필요 조건</li>
                     <div class="li-desc">웨이퍼와의 부착성</div>
                     <div class="li-desc">전기 저항이 낮은 물질</div>
                     <div class="li-desc">열적ㆍ화학적 안정성</div>
                     <div class="li-desc">높은 신뢰성</div>
                     <div class="li-desc">제조 가격</div>
-                <li>대표적인 금속 : 알루미늄(Al), 티타늄(Ti), 텅스텐(W) 등이 있음</li>
+                <li>대표적인 금속 : 알루미늄(Al), 티타늄(Ti), 텅스텐(W) 등이 있다</li>
 
                 <div class="img-box">
                     <img src="../../images/metal_interconnect_needto.png" alt="금속재료의필요조건">
@@ -206,23 +264,54 @@
         <div class="card">
             <h3>① 금속의 증기화</h3>
             <ul>
-                <li>금속을 진공 챔버에 넣고 낮은 압력에서 끓이거나 전기적 충격을 주면 금속은 증기 상태가 됨</li>
+                <li>금속을 진공 챔버에 넣고, 낮은 압력에서 끓이거나 전자빔(e-beam)을 가하면 금속은 증기 상태가 된다</li>
             </ul>
             <h3>② 금속막 형성</h3>
             <ul>
-                <li>웨이퍼를 금속의 증기화가 진행된 진공 챔버에 넣으면 얇은 금속막이 형성 됨</li>
-                <li>대표적인 반도체용 금속 배선 재료로는 알루미늄(Al)이 있음</li>
-                    <div class="li-desc">장점 : 산화막(Silicon Dioxide)과의 부착성이 좋고, 가공성이 뛰어남</div>
-                    <div class="li-desc">단점 : 알루미늄(Al)은 실리콘(Si)과 만나면 서로 섞이려는 성질이 있음</div>
-                    <div class="li-desc">실리콘 웨이퍼의 경우 알루미늄 배선 과정에서 접합면이 파괴되는 현상이 생길 수 있음</div>
-                <li>베리어 메탈(Barrier Metal) : 알루미늄과 웨이퍼 접합면 사이에 장벽(Barrier) 역할을 하는 금속을 증착</li>
-                    <div class="li-desc">이중으로 박막을 형성해 접합면이 파괴되는 것을 막을 수 있음</div>
+                <li>웨이퍼를 금속의 증기화가 진행된 진공 챔버에 넣으면 얇은 금속막이 형성된다</li>
+                <li>대표적인 반도체용 금속 배선 재료로는 알루미늄(Al)이 있다</li>
+                    <div class="li-desc">장점 : 산화막(Silicon Dioxide)과의 부착성이 좋고, 가공성이 뛰어나다</div>
+                    <div class="li-desc">단점 : 알루미늄(Al)은 실리콘(Si)과 만나면 서로 섞이려는 성질이 있다</div>
+                    <div class="li-desc">실리콘 웨이퍼의 경우, 알루미늄 배선 과정에서 접합면이 파괴되는 현상이 생길 수 있다</div>
+                <li>배리어 메탈(Barrier Metal) : 알루미늄과 웨이퍼 접합면 사이에 장벽(Barrier) 역할을 하는 금속을 증착하는 것이다</li>
+                    <div class="li-desc">이중으로 박막을 형성해 접합면이 파괴되는 것을 막을 수 있다</div>
                 <div class="img-box">
                     <img src="../../images/metal_interconnect_process.png" alt="금속배선">
                 </div>
-                <li>금속 배선 공정에서도 좁은 영역에 균일한 박막을 형성시키기 위해 화학적 기상증착(CVD)으로의 전환이 이루어지고 있음</li>
+                <li>금속 배선 공정에서도 좁은 영역에 균일한 박막을 형성시키기 위해 화학적 기상증착(CVD)으로의 전환이 이루어지고 있다</li>
             </ul>
+
+            <div class="svg-box">
+                <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+                    <text x="320" y="20" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">금속 배선 단면 개념도 (배리어 메탈 구조)</text>
+
+                    <rect x="150" y="100" width="340" height="40" fill="#111827" stroke="#374151"/>
+                    <text x="320" y="125" text-anchor="middle" fill="#9ca3af" font-size="11">실리콘(Si) / 산화막(SiO₂)</text>
+
+                    <rect x="150" y="90" width="340" height="10" fill="rgba(245,158,11,0.5)" stroke="#f59e0b"/>
+                    <text x="320" y="85" text-anchor="middle" fill="#f59e0b" font-size="10">배리어 메탈(Barrier Metal)</text>
+
+                    <rect x="150" y="60" width="340" height="30" fill="rgba(99,102,241,0.4)" stroke="#6366f1"/>
+                    <text x="320" y="45" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="700">알루미늄(Al) 배선층</text>
+
+                    <text x="320" y="165" text-anchor="middle" fill="#9ca3af" font-size="10">배리어 메탈이 없으면 Al과 Si가 서로 섞여 접합면이 파괴될 수 있다</text>
+                </svg>
+            </div>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : 금속 배선 검사와 머신비전</strong><br>
+                금속 배선층은 화학적 기계 연마(CMP)로 표면을 평탄화한 뒤, 다음 층을 쌓기 전에 반드시 결함 검사를 거친다.
+                이 단계에서는 배선 폭(Line Width)과 간격(Spacing)이 설계값대로 형성되었는지 CD-SEM으로 측정하고, 배선이
+                끊어진 단선(Open)이나 서로 붙어버린 브릿지(Bridge), 배선 내부의 빈 공간인 보이드(Void) 결함을 광학·전자빔
+                검사 장비로 찾아낸다. 특히 층과 층 사이를 잇는 미세한 구멍인 비아(Via)/컨택(Contact)이 제대로 채워지지 않으면
+                전기적 연결 불량으로 이어지기 때문에, 이 부분의 결함 검사는 수율에 직결되는 핵심 검사 항목 중 하나로 다뤄진다.
+            </div>
         </div>
+    </div>
+
+    <div class="card nav-row">
+        <a href=".\semiconductor_ion_implantation.html" class="detail-btn"><span class="arrow">←</span> 이전 : 이온 주입 공정 (Ion Implantation)</a>
+        <a href=".\semiconductor_electrical_die_sorting.html" class="detail-btn">다음 : EDS 공정 (전기적 다이 선별) <span class="arrow">→</span></a>
     </div>
 </section>
 

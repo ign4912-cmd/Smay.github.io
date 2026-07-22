@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -50,11 +50,11 @@
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -138,20 +138,80 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
 
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
     </style>
 </head>
 
@@ -172,9 +232,6 @@
 
     <nav>
         <h3>식각 공정 (Etching)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
     </nav>
 </header>
 
@@ -182,63 +239,150 @@
     <div class="section">
         <h2>1. 개요</h2>
         <div class="card">
+            <span class="tag">기초 개념</span>
             <ul>
-                <li>반도체의 구조를 형성하는 패턴을 만드는 과정</li>
-                <li>필요한 회로 패턴을 제외한 나머지 부분을 제외 시키는 역할</li>
-                <li>회화에서 에칭 기법은 산의 화학작용을 방지하는 방식제(그라운드)를 바른 동판을 날카로운 도구를 이용하여 긁어내 동판을 노출시키는 과정</li>
-                <li>이때 동판을 부식액(묽은 질산)에 넣고, 부식의 진행 정도를 조절하여 이미지를 만듦</li>
+                <li>반도체의 구조를 형성하는 패턴을 만드는 과정이다</li>
+                <li>필요한 회로 패턴을 제외한 나머지 부분을 제거시키는 역할을 한다</li>
+                <li>회화에서 에칭(Etching) 기법은, 산의 화학작용을 방지하는 방식제(그라운드)를 바른 동판을 날카로운 도구로 긁어내 동판을 노출시키는 과정이다</li>
+                <li>이때 동판을 부식액(묽은 질산)에 넣고, 부식의 진행 정도를 조절하여 이미지를 만든다</li>
 
-                <div class="img-box">
-                    <img src="../../images/etching_process.png" alt="식각공정(Etching)">
-                </div>
-                
-                <li>반도체 식각공정도 웨이퍼에 액체 또는 기체의 부식액(etchant)을 이용해 불필요한 부분을 선택적으로 제거한 후 반도체 회로 패턴을 만듦</li>
-                <li>포토공정에서 형성된 감광액 부분을 남겨둔 채 나머지 부분을 부식액을 이용해 벗겨 냄으로써 회로를 형성, 식각이 끝나면 감광액은 제거</li>
-                <li>위 과정을 반복하여 반도체를 구성하는 여러 층의 얇은 막에 원하는 회로 패턴을 형성하는 과정</li>
-                <li>식각 반응을 일으키는 물질의 상태에 따라 습식(Wet)과 건식(Dry)으로 나뉨</li>
+                <li>반도체 식각공정도 이와 비슷하게, 웨이퍼에 액체 또는 기체의 부식액(etchant)을 이용해 불필요한 부분을 선택적으로 제거한 후 반도체 회로 패턴을 만든다</li>
+                <li>포토공정에서 형성된 감광액 부분을 남겨둔 채, 나머지 부분을 부식액으로 벗겨 냄으로써 회로를 형성하며, 식각이 끝나면 감광액은 제거한다</li>
+                <li>이 과정을 반복하여 반도체를 구성하는 여러 층의 얇은 막에 원하는 회로 패턴을 형성한다</li>
+                <li>식각 반응을 일으키는 물질의 상태에 따라 습식(Wet)과 건식(Dry)으로 나뉜다</li>
             </ul>
+
+            <div class="svg-box">
+                <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+                    <text x="320" y="20" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">식각 전/후 단면 개념도</text>
+
+                    <rect x="60" y="60" width="200" height="60" fill="#111827" stroke="#374151"/>
+                    <text x="160" y="95" text-anchor="middle" fill="#9ca3af" font-size="11">막질(하부층)</text>
+                    <rect x="90" y="45" width="30" height="15" fill="rgba(99,102,241,0.4)" stroke="#6366f1"/>
+                    <rect x="200" y="45" width="30" height="15" fill="rgba(99,102,241,0.4)" stroke="#6366f1"/>
+                    <text x="160" y="150" text-anchor="middle" fill="#9ca3af" font-size="11">식각 전 (PR 패턴 존재)</text>
+
+                    <path d="M300 90 L340 90" stroke="#6366f1" stroke-width="2"/>
+                    <polygon points="340,84 352,90 340,96" fill="#6366f1"/>
+
+                    <rect x="380" y="90" width="30" height="30" fill="#111827" stroke="#374151"/>
+                    <rect x="490" y="90" width="30" height="30" fill="#111827" stroke="#374151"/>
+                    <rect x="380" y="75" width="30" height="15" fill="rgba(99,102,241,0.4)" stroke="#6366f1"/>
+                    <rect x="490" y="75" width="30" height="15" fill="rgba(99,102,241,0.4)" stroke="#6366f1"/>
+                    <text x="455" y="150" text-anchor="middle" fill="#9ca3af" font-size="11">식각 후 (노출부 제거)</text>
+                </svg>
+                <div style="margin-top:8px; font-size:12px; color:#9ca3af;">※ 감광액(보라색)으로 덮이지 않은 부분만 부식액에 의해 깎여 나가면서 회로 패턴이 새겨진다</div>
+            </div>
         </div>
     </div>
 
     <div class="section">
-        <h2>2. 습식(Dry)과 건식(Dry) 식각</h2>
+        <h2>2. 습식(Wet)과 건식(Dry) 식각</h2>
         <div class="card">
+            <div class="svg-box">
+                <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+                    <text x="160" y="22" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">건식 식각 (수직 프로파일)</text>
+                    <rect x="60" y="60" width="200" height="50" fill="#111827" stroke="#374151"/>
+                    <path d="M110 60 L110 40 L160 40 L160 60" fill="none" stroke="#6366f1" stroke-width="2"/>
+                    <rect x="110" y="35" width="50" height="10" fill="rgba(99,102,241,0.4)"/>
+                    <path d="M110 60 L110 110 M160 60 L160 110" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,2"/>
+                    <text x="160" y="140" text-anchor="middle" fill="#9ca3af" font-size="11">이방성(Anisotropic)</text>
+                    <text x="160" y="155" text-anchor="middle" fill="#9ca3af" font-size="11">옆면이 수직 → 미세 패턴에 유리</text>
+
+                    <text x="480" y="22" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">습식 식각 (등방성 프로파일)</text>
+                    <rect x="380" y="60" width="200" height="50" fill="#111827" stroke="#374151"/>
+                    <path d="M430 60 Q405 90 430 110 M480 60 Q505 90 480 110" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,2"/>
+                    <rect x="430" y="35" width="50" height="10" fill="rgba(99,102,241,0.4)"/>
+                    <text x="480" y="140" text-anchor="middle" fill="#9ca3af" font-size="11">등방성(Isotropic)</text>
+                    <text x="480" y="155" text-anchor="middle" fill="#9ca3af" font-size="11">옆면이 둥글게 파임(언더컷) → 미세 패턴에 불리</text>
+
+                    <text x="320" y="195" text-anchor="middle" fill="#9ca3af" font-size="10">보라색 = 감광액(PR), 주황 점선 = 실제 식각으로 파여나간 경계선</text>
+                </svg>
+            </div>
+
+            <table class="compare-table">
+                <tr><th>구분</th><th>건식 식각 (Dry Etching)</th><th>습식 식각 (Wet Etching)</th></tr>
+                <tr><td>방식</td><td>플라즈마·반응성 기체·이온 이용</td><td>화학 용액을 이용한 화학 반응</td></tr>
+                <tr><td>식각 방향성</td><td>이방성(Anisotropic, 수직 식각 가능)</td><td>등방성(Isotropic, 옆면도 함께 깎임)</td></tr>
+                <tr><td>정밀도</td><td>미세 패턴에 유리</td><td>미세 패턴에는 불리(언더컷 발생)</td></tr>
+                <tr><td>비용/공정 난이도</td><td>상대적으로 비싸고 까다로움</td><td>상대적으로 저렴하고 간단함</td></tr>
+                <tr><td>주 용도</td><td>나노 단위 미세 회로 패턴 형성</td><td>세정, 저집적도 층, 초기 공정</td></tr>
+            </table>
+
             <h3>① 건식 식각 (Dry Etching)</h3>
             <ul>
-                <li>반응성 기체, 이온 등을 이용해 특정 부위를 식각하는 방법</li>
-                <li>단점 : 습식에 비해 비용이 비싸고 방법이 까다로움</li>
-                <li>장점 : 정교한 식각이 가능하여 나노 단위로 고집적화되는 반도체 기술 변화에 따라 수율을 높이기 위한 방법으로 건식 식각이 확대되는 추세</li>
-                <li>플라즈마(Plasma) 식각이라고도 하며, 일반 대기압보다 낮은 압력인 진공 챔버(Chamber)에 가스를 주입</li>
-                <li>전기 에너지를 공급하여 플라즈마를 발생 시킴</li>
-                <li>플라즈마(Plasma)</li>
-                    <div class="li-desc">고체-액체-기체를 넘어선 물질의 제 4상태</div>
-                    <div class="li-desc">많은 수의 자유전자, 이온, 중성의 원자 또는 분자로 구성되어 이온화된 기체</div>
-                    <div class="li-desc">이온화는 전기적으로 중성인 원자 또는 분자가 자신이 보유하고 있던 전자를 떼어 내거나 추가로 확보함으로써, 양전하 또는 음전하 상태로 바뀌는 현상</div>
-                    <div class="li-desc">전기에너지에 의해 형성된 충분한 크기의 자기장이 기체에 가해질 때, 기체가 충돌하고 이온화됨으로써 발생</div>
-                    <div class="li-desc">자기장이 자유전자를 가속화시켜 높은 에너지를 가진 자유전자가 중성의 원자나 분자와 충돌하여 이온화를 일으킴</div>
-                    <div class="img-box">
-                        <img src="../../images/etching_plasma.png" alt="플라즈마의 생성">
+                <li>반응성 기체, 이온 등을 이용해 특정 부위를 식각하는 방법이다</li>
+                <li>단점 : 습식에 비해 비용이 비싸고 공정이 까다롭다</li>
+                <li>장점 : 정교한 식각이 가능해, 나노 단위로 고집적화되는 반도체 기술 흐름에 맞춰 수율을 높이기 위한 방법으로 건식 식각이 확대되는 추세다</li>
+                <li>플라즈마(Plasma) 식각이라고도 하며, 일반 대기압보다 낮은 압력인 진공 챔버(Chamber)에 가스를 주입한다</li>
+                <li>전기 에너지를 공급하여 플라즈마를 발생시킨다</li>
+                <li>플라즈마(Plasma)란?</li>
+                    <div class="li-desc">고체-액체-기체를 넘어선 물질의 제 4상태다</div>
+                    <div class="li-desc">많은 수의 자유전자, 이온, 중성의 원자 또는 분자로 구성되어 이온화된 기체다</div>
+                    <div class="li-desc">이온화는 전기적으로 중성인 원자 또는 분자가 자신이 보유하고 있던 전자를 떼어 내거나 추가로 확보함으로써, 양전하 또는 음전하 상태로 바뀌는 현상이다</div>
+                    <div class="li-desc">전기에너지에 의해 형성된 충분한 크기의 전기장이 기체에 가해질 때, 기체가 충돌하고 이온화됨으로써 발생한다</div>
+                    <div class="li-desc">전기장이 자유전자를 가속화시켜, 높은 에너지를 가진 자유전자가 중성의 원자나 분자와 충돌하여 이온화를 일으킨다</div>
+                    <div class="svg-box" style="max-width:700px; margin:16px auto;">
+                        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="233" y1="10" x2="233" y2="200" stroke="#1f2937"/>
+                            <line x1="466" y1="10" x2="466" y2="200" stroke="#1f2937"/>
+
+                            <text x="115" y="18" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">① 전기장이 전자를 가속</text>
+                            <rect x="30" y="40" width="170" height="8" fill="#374151"/>
+                            <rect x="30" y="190" width="170" height="8" fill="#374151"/>
+                            <path d="M75 55 L75 183 M115 55 L115 183 M155 55 L155 183" stroke="#6366f1" stroke-width="1.2"/>
+                            <polygon points="71,178 75,186 79,178" fill="#6366f1"/>
+                            <polygon points="111,178 115,186 119,178" fill="#6366f1"/>
+                            <polygon points="151,178 155,186 159,178" fill="#6366f1"/>
+                            <text x="115" y="65" text-anchor="middle" fill="#38bdf8" font-size="9">전자(e⁻)</text>
+                            <circle cx="115" cy="75" r="5" fill="#38bdf8"/>
+                            <path d="M115 82 L115 135" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2,2"/>
+                            <circle cx="115" cy="150" r="11" fill="#9ca3af"/>
+                            <text x="115" y="178" text-anchor="middle" fill="#9ca3af" font-size="9">중성 원자/분자</text>
+
+                            <text x="349" y="18" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">② 고에너지 전자가 원자와 충돌</text>
+                            <circle cx="349" cy="95" r="5" fill="#38bdf8"/>
+                            <path d="M349 102 L349 128" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2,2"/>
+                            <circle cx="349" cy="140" r="11" fill="#9ca3af"/>
+                            <path d="M349 124 L349 116 M337 132 L330 126 M361 132 L368 126 M337 148 L330 154 M361 148 L368 154" stroke="#f59e0b" stroke-width="1.5"/>
+                            <text x="349" y="178" text-anchor="middle" fill="#9ca3af" font-size="9">충돌(전기장 가속)</text>
+
+                            <text x="583" y="18" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">③ 이온화 → 이온 + 전자 2개</text>
+                            <path d="M583 140 L583 128 M583 140 L560 155 M583 140 L606 155" stroke="#9ca3af" stroke-width="1"/>
+                            <circle cx="583" cy="120" r="11" fill="#f59e0b"/>
+                            <text x="583" y="102" text-anchor="middle" fill="#f59e0b" font-size="9">이온(+)</text>
+                            <circle cx="560" cy="160" r="5" fill="#38bdf8"/>
+                            <circle cx="606" cy="160" r="5" fill="#38bdf8"/>
+                            <text x="583" y="182" text-anchor="middle" fill="#38bdf8" font-size="9">전자 2개</text>
+
+                            <text x="350" y="238" text-anchor="middle" fill="#9ca3af" font-size="10">전기장이 자유전자를 가속하고, 고에너지 전자가 중성 원자/분자와 충돌해 이온과 전자를 추가로 만들어내며,</text>
+                            <text x="350" y="256" text-anchor="middle" fill="#9ca3af" font-size="10">이 반응이 연쇄적으로(Avalanche) 반복되어 이온·전자 수가 급격히 늘어난 상태가 곧 '플라즈마'다</text>
+                        </svg>
                     </div>
-                <li>위의 이온화에 의해 생성된 추가 전자도 연쇄 반응(Avalanche)에 의해 또 다른 이온화를 일으키면서 이온의 수가 기하급수적으로 늘어남</li>
-                <li>위의 상태를 '플라즈마 상태'라고 함</li>
-                <li>플라즈마 상태에서 해리된 반응성 원자(Radical Atom)가 웨이퍼 위를 덮고 있는 막질 원자와 만나 강한 휘발성을 띠면서 표면에서 떨어져 나가게 됨</li>
-                <li>이러한 반응을 통해 감광액(PR, Photo Resist) 보호막으로 가려져 있지 않은 막질은 제거되는 것</li>
+                <li>위의 이온화에 의해 생성된 추가 전자도 연쇄 반응(Avalanche)에 의해 또 다른 이온화를 일으키면서 이온의 수가 기하급수적으로 늘어난다</li>
+                <li>이 상태를 '플라즈마 상태'라고 한다</li>
+                <li>플라즈마 상태에서 해리된 반응성 원자(Radical Atom)가 웨이퍼 위를 덮고 있는 막질 원자와 만나 강한 휘발성을 띠면서 표면에서 떨어져 나가게 된다</li>
+                <li>이러한 반응을 통해 감광액(PR, Photo Resist) 보호막으로 가려져 있지 않은 막질이 제거되는 것이다</li>
                 <li>건식 식각 과정의 주요 사항</li>
                     <div class="li-desc">균일도(Uniformity) 유지</div>
-                    <div class="li-desc">→ 식각이 이루어지는 속도가 웨이퍼 상의 여러 지점에서 '얼마나 동일한 가'</div>
-                    <div class="li-desc">→ 부위 별 식각 속도가 다를 경우, 형성된 모양이 부위별로 다르게 되어 불량 발생 또는 특성이 달라지는 문제 발생 가능성 있음</div>
+                    <div class="li-desc">→ 식각이 이루어지는 속도가 웨이퍼 상의 여러 지점에서 얼마나 동일한가를 의미한다</div>
+                    <div class="li-desc">→ 부위별 식각 속도가 다를 경우, 형성된 모양이 부위별로 다르게 되어 불량이 발생하거나 특성이 달라지는 문제가 생길 수 있다</div>
                     <div class="li-desc">식각 속도(Etch Rate)</div>
-                    <div class="li-desc">→ 일정 시간 동안 막질을 얼마나 제거할 수 있는지를 의미</div>
-                    <div class="li-desc">→ 식각 속도는 주로 표면 반응에 필요한 반응성 원자와 이온의 양, 이온이 가진 에너지에 의해서 변화</div>
-                    <div class="li-desc">→ 즉, 이러한 인자의 조절 능력을 높여 전체적인 수율을 향상시키기 위해 노력이 필요</div>
-                    <div class="li-desc">선택비(Selectivity), 형상(Profile) 등의 주요 인자들도 주요 사항들로 중요하게 여겨지고 있음</div>
+                    <div class="li-desc">→ 일정 시간 동안 막질을 얼마나 제거할 수 있는지를 의미한다</div>
+                    <div class="li-desc">→ 식각 속도는 주로 표면 반응에 필요한 반응성 원자와 이온의 양, 이온이 가진 에너지에 의해서 변화한다</div>
+                    <div class="li-desc">→ 즉, 이러한 인자의 조절 능력을 높여 전체적인 수율을 향상시키기 위한 노력이 필요하다</div>
+                    <div class="li-desc">선택비(Selectivity), 형상(Profile) 등의 인자들도 중요하게 여겨지고 있다</div>
                 <li>주요 업체</li>
                     <div class="li-desc">국외 : Lam Research, Applied Materials</div>
                     <div class="li-desc">국내 : 원익IPS, PSK, TES</div>
             </ul>
             <h3>② 습식 식각 (Wet Etching)</h3>
             <ul>
-                <li>용액을 이용 화학적인 반응을 통해 식각하는 방법</li>
+                <li>화학 용액(부식액)을 웨이퍼에 뿌리거나 담가서, 화학 반응을 통해 막질을 제거하는 방법이다</li>
+                <li>용액이 모든 방향으로 고르게 반응하는 등방성(Isotropic) 식각이라, 노출된 부분의 옆면(감광액 아래쪽)까지 함께 파고드는 '언더컷' 현상이 발생하기 쉽다</li>
+                <li>장점 : 장비가 비교적 단순하고 저렴하며, 처리 속도가 빠르고 대면적을 균일하게 처리하기 좋다</li>
+                <li>단점 : 미세한 패턴에서는 언더컷 때문에 원하는 형상을 정확히 얻기 어려워, 초미세 공정에는 건식 식각이 주로 사용된다</li>
+                <li>주로 세정(Cleaning), 자연 산화막 제거, 상대적으로 선폭이 큰 층의 식각 등에 사용된다</li>
             </ul>
             <h3>③ 주요 업체</h3>
             <ul>
@@ -247,10 +391,25 @@
                 <li>세정 장비 업체</li>
                     <div class="li-desc">습식 : 제우스</div>
                     <div class="li-desc">건식 : PSK</div>
-                <li>SIC 링 관련 업체</li>
+                <li>SiC 링 관련 업체</li>
                     <div class="li-desc">TCK</div>
             </ul>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : 식각 공정과 머신비전/광학 검사</strong><br>
+                식각 챔버 내부에서는 흔히 OES(광학 방출 분광법, Optical Emission Spectroscopy)라는 광학 센서 기법으로
+                플라즈마가 내는 빛의 스펙트럼 변화를 실시간 관찰해, 특정 막질이 완전히 제거된 순간(식각 종료 시점, Endpoint)을
+                자동으로 감지한다 — 이는 사람이 눈으로 색 변화를 보고 판단하던 것을 광학 센서로 대체한 대표적인 사례다.
+                식각이 끝난 웨이퍼는 CD-SEM으로 단면 프로파일(수직인지, 언더컷이 발생했는지)을 측정하고, 브라이트필드/다크필드
+                AOI 장비로 파티클 재부착이나 잔류물(Residue), 패턴 붕괴 같은 결함을 검사한다. 특히 위 그림처럼 이방성/등방성
+                프로파일 차이는 실제 결함 검사 장비가 판정 기준으로 삼는 핵심 특징 중 하나다.
+            </div>
         </div>
+    </div>
+
+    <div class="card nav-row">
+        <a href=".\semiconductor_photolithography.html" class="detail-btn"><span class="arrow">←</span> 이전 : 포토 공정 (Photolithography)</a>
+        <a href=".\semiconductor_deposition.html" class="detail-btn">다음 : 증착 공정 (Deposition) <span class="arrow">→</span></a>
     </div>
 </section>
 

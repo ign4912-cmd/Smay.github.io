@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -50,11 +50,11 @@
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -138,20 +138,80 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
 
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
     </style>
 </head>
 
@@ -172,9 +232,6 @@
 
     <nav>
         <h3>증착 공정 (Deposition)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
     </nav>
 </header>
 
@@ -182,51 +239,179 @@
     <div class="section">
         <h2>1. 개요</h2>
         <div class="card">
+            <span class="tag">기초 개념</span>
             <ul>
-                <li>회로 간의 구분과 연결, 보호 역할을 하는 박막(thin film)을 만드는 과정</li>
-                <li>사전적 의미로 '박막(thin film)'이란 단순한 기계 가공으로는 실현 불가능한 1um(마이크로미터) 이하의 얇은 막을 뜻함</li>
-                <li>웨이퍼 위에 원하는 분자 또는 원자 단위의 박막을 입히는 일련의 과정</li>
-                <li>두께가 워낙 얇기 때문에 웨이퍼 위에 균일하게 박막을 형성하기 위해서는 정교하고 세밀한 기술력이 필요함</li>
-                <li>박막은 크게 회로들 간 전기적인 신호를 연결해주는 금속막(전도)층과 내부 연결층을 전기적으로 분리하거나 오염원으로부터 차단시켜주는 절연막층으로 구분</li>
+                <li>회로 간의 구분과 연결, 보호 역할을 하는 박막(thin film)을 만드는 과정이다</li>
+                <li>사전적 의미로 '박막(thin film)'이란, 단순한 기계 가공으로는 실현 불가능한 1μm(마이크로미터) 이하의 얇은 막을 뜻한다</li>
+                <li>웨이퍼 위에 원하는 분자 또는 원자 단위의 박막을 입히는 일련의 과정이다. 비유하자면 얇은 페인트 막을 아주 균일한 두께로, 그것도 눈에 보이지도 않는 미세한 홈 구석구석까지 빈틈없이 칠하는 작업과 비슷하다</li>
+                <li>두께가 워낙 얇기 때문에, 웨이퍼 위에 균일하게 박막을 형성하기 위해서는 정교하고 세밀한 기술력이 필요하다</li>
+                <li>박막은 크게 회로들 간 전기적인 신호를 연결해주는 금속막(전도)층과, 내부 연결층을 전기적으로 분리하거나 오염원으로부터 차단시켜주는 절연막층으로 구분된다</li>
 
                 <div class="img-box">
                     <img src="../../images/deposition_structure.png" alt="증착구조">
                 </div>
             </ul>
+
+            <div class="svg-box" style="max-width:700px; margin:16px auto;">
+                <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+                    <text x="350" y="14" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">증착 공정 한눈에 보기</text>
+
+                    <rect x="250" y="20" width="200" height="40" rx="8" fill="#111827" stroke="#6366f1" stroke-width="2"/>
+                    <text x="350" y="38" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">증착(Deposition)</text>
+                    <text x="350" y="53" text-anchor="middle" fill="#9ca3af" font-size="9">웨이퍼 위에 박막(Thin Film) 형성</text>
+
+                    <path d="M350 60 L350 75 M150 95 L150 75 L350 75 M550 95 L550 75 L350 75" fill="none" stroke="#374151"/>
+                    <path d="M350 75 L350 95" stroke="#374151"/>
+
+                    <rect x="60" y="95" width="180" height="55" rx="8" fill="#111827" stroke="#374151"/>
+                    <text x="150" y="115" text-anchor="middle" fill="#e5e7eb" font-size="11" font-weight="700">PVD</text>
+                    <text x="150" y="129" text-anchor="middle" fill="#9ca3af" font-size="9">(물리적 기상증착)</text>
+                    <text x="150" y="143" text-anchor="middle" fill="#9ca3af" font-size="9">금속 타겟을 때려 증착</text>
+
+                    <rect x="260" y="95" width="180" height="55" rx="8" fill="#111827" stroke="#374151"/>
+                    <text x="350" y="115" text-anchor="middle" fill="#e5e7eb" font-size="11" font-weight="700">CVD</text>
+                    <text x="350" y="129" text-anchor="middle" fill="#9ca3af" font-size="9">(화학적 기상증착)</text>
+                    <text x="350" y="143" text-anchor="middle" fill="#9ca3af" font-size="9">기체의 화학반응으로 증착</text>
+
+                    <rect x="460" y="95" width="180" height="55" rx="8" fill="#111827" stroke="#374151"/>
+                    <text x="550" y="115" text-anchor="middle" fill="#e5e7eb" font-size="11" font-weight="700">ALD</text>
+                    <text x="550" y="129" text-anchor="middle" fill="#9ca3af" font-size="9">(원자층 증착)</text>
+                    <text x="550" y="143" text-anchor="middle" fill="#9ca3af" font-size="9">원자층 단위로 정밀 증착</text>
+
+                    <path d="M150 150 L150 170 M350 150 L350 170 M550 150 L550 170 M150 170 L550 170 M230 170 L230 195 M470 170 L470 195" fill="none" stroke="#374151"/>
+
+                    <rect x="130" y="195" width="200" height="45" rx="8" fill="#111827" stroke="#f59e0b"/>
+                    <text x="230" y="213" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="700">금속막 (전도층)</text>
+                    <text x="230" y="228" text-anchor="middle" fill="#9ca3af" font-size="9">회로 간 전기신호 연결</text>
+
+                    <rect x="370" y="195" width="200" height="45" rx="8" fill="#111827" stroke="#6366f1"/>
+                    <text x="470" y="213" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="700">절연막 (분리·보호층)</text>
+                    <text x="470" y="228" text-anchor="middle" fill="#9ca3af" font-size="9">오염원 차단·전기적 분리</text>
+
+                    <text x="350" y="255" text-anchor="middle" fill="#9ca3af" font-size="10">증착 방식(PVD/CVD/ALD)으로 형성된 박막은 전도(배선) 또는 절연(보호) 목적으로 쓰인다</text>
+                </svg>
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>2. 물리적 방법(PVD)과 화학적 방법(CVD)</h2>
         <div class="card">
+            <div class="svg-box" style="max-width:1040px;">
+                <svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" style="max-width:1040px;">
+                    <text x="150" y="20" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">PVD (스퍼터링)</text>
+                    <rect x="90" y="35" width="120" height="14" fill="#374151"/>
+                    <text x="150" y="45" text-anchor="middle" fill="#e5e7eb" font-size="9">금속 타겟</text>
+                    <circle cx="110" cy="70" r="3" fill="#f59e0b"/>
+                    <circle cx="150" cy="75" r="3" fill="#f59e0b"/>
+                    <circle cx="190" cy="70" r="3" fill="#f59e0b"/>
+                    <path d="M110 70 L110 55 M150 75 L150 55 M190 70 L190 55" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="150" y="95" text-anchor="middle" fill="#9ca3af" font-size="9">플라즈마 이온이 타겟을 때림</text>
+                    <path d="M110 100 Q130 130 150 145 M190 100 Q170 130 150 145" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="2,2"/>
+                    <text x="150" y="160" text-anchor="middle" fill="#9ca3af" font-size="9">튀어나온 금속 원자</text>
+                    <rect x="90" y="170" width="120" height="14" fill="#111827" stroke="#374151"/>
+                    <text x="150" y="180" text-anchor="middle" fill="#e5e7eb" font-size="9">웨이퍼</text>
+
+                    <line x1="320" y1="30" x2="320" y2="200" stroke="#1f2937"/>
+
+                    <text x="480" y="20" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">CVD (화학기상증착)</text>
+                    <rect x="420" y="170" width="120" height="14" fill="#111827" stroke="#374151"/>
+                    <text x="480" y="180" text-anchor="middle" fill="#e5e7eb" font-size="9">웨이퍼</text>
+                    <path d="M430 60 L440 90 M460 50 L468 90 M490 55 L495 90 M520 60 L528 90" stroke="#22c55e" stroke-width="1.5"/>
+                    <circle cx="430" cy="55" r="3" fill="#22c55e"/>
+                    <circle cx="460" cy="45" r="3" fill="#22c55e"/>
+                    <circle cx="490" cy="50" r="3" fill="#22c55e"/>
+                    <circle cx="520" cy="55" r="3" fill="#22c55e"/>
+                    <text x="480" y="35" text-anchor="middle" fill="#9ca3af" font-size="9">반응 기체 주입</text>
+                    <rect x="420" y="150" width="120" height="10" fill="rgba(34,197,94,0.4)"/>
+                    <text x="480" y="140" text-anchor="middle" fill="#9ca3af" font-size="9">웨이퍼 표면에서 화학반응 후 박막 형성</text>
+
+                    <line x1="640" y1="30" x2="640" y2="200" stroke="#1f2937"/>
+
+                    <text x="800" y="20" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">ALD (원자층 증착)</text>
+
+                    <circle cx="700" cy="42" r="7" fill="#f59e0b"/>
+                    <text x="700" y="45" text-anchor="middle" fill="#111827" font-size="8" font-weight="700">A</text>
+                    <path d="M710 42 L730 42" stroke="#9ca3af" stroke-width="1.2"/>
+                    <polygon points="730,39 736,42 730,45" fill="#9ca3af"/>
+                    <circle cx="750" cy="42" r="7" fill="none" stroke="#9ca3af"/>
+                    <text x="750" y="45" text-anchor="middle" fill="#9ca3af" font-size="7">퍼지</text>
+                    <path d="M760 42 L780 42" stroke="#9ca3af" stroke-width="1.2"/>
+                    <polygon points="780,39 786,42 780,45" fill="#9ca3af"/>
+                    <circle cx="800" cy="42" r="7" fill="#22c55e"/>
+                    <text x="800" y="45" text-anchor="middle" fill="#111827" font-size="8" font-weight="700">B</text>
+                    <path d="M810 42 L830 42" stroke="#9ca3af" stroke-width="1.2"/>
+                    <polygon points="830,39 836,42 830,45" fill="#9ca3af"/>
+                    <circle cx="850" cy="42" r="7" fill="none" stroke="#9ca3af"/>
+                    <text x="850" y="45" text-anchor="middle" fill="#9ca3af" font-size="7">퍼지</text>
+                    <text x="775" y="62" text-anchor="middle" fill="#9ca3af" font-size="8">전구체 A 주입 → 퍼지 → 전구체 B 주입 → 퍼지 (반복 = 원자 한 층씩 성장)</text>
+
+                    <rect x="680" y="140" width="240" height="30" fill="#111827" stroke="#374151"/>
+                    <rect x="680" y="90" width="30" height="50" fill="#111827" stroke="#374151"/>
+                    <rect x="890" y="90" width="30" height="50" fill="#111827" stroke="#374151"/>
+                    <text x="800" y="188" text-anchor="middle" fill="#9ca3af" font-size="8">좁고 깊은 홈(Trench)</text>
+
+                    <rect x="710" y="133" width="180" height="7" fill="#22c55e"/>
+                    <rect x="703" y="90" width="7" height="50" fill="#22c55e"/>
+                    <rect x="890" y="90" width="7" height="50" fill="#22c55e"/>
+                    <text x="800" y="115" text-anchor="middle" fill="#22c55e" font-size="8" font-weight="700">모든 면에 동일 두께로 코팅</text>
+                </svg>
+                <div style="margin-top:8px; font-size:12px; color:#9ca3af;">※ PVD는 고체 금속을 물리적으로 때려서 떼어낸 원자를 붙이고, CVD는 기체 원료가 웨이퍼 표면에서 화학반응을 일으켜 막을 만들며, ALD는 전구체를 한 번에 한 층씩 자기제한적으로 반응시켜 깊은 홈 내부까지 균일하게 코팅한다</div>
+            </div>
+
             <h3>① 물리적 기상증착방법 (PVD, Physical Vapor Deposition)</h3>
             <ul>
-                <li>금속 박막의 증착에 주로 사용되며 화학반응이 수반되지는 않음</li>
+                <li>금속 박막의 증착에 주로 사용되며, 화학반응이 수반되지는 않는다</li>
                 <li>스퍼터링(Sputtering)</li>
-                  <div class="li-desc">PVD의 한 종류</div>
-                  <div class="li-desc">플라즈마 이온으로 타겟 금속을 때려서 튀어나온 원자를 웨이퍼에 증착하는 방식</div>
+                  <div class="li-desc">PVD의 한 종류다</div>
+                  <div class="li-desc">플라즈마 이온으로 타겟 금속을 때려서, 튀어나온 원자를 웨이퍼에 증착하는 방식이다</div>
                   <div class="li-desc">금속 타겟 준비 → 이온으로 타격 → 금속 원자가 튀어나옴 → 웨이퍼에 달라붙음</div>
-                  <div class="li-desc">스퍼터링 타켓 제조 업체 : 지오엘리먼트</div>
+                  <div class="li-desc">스퍼터링 타겟 제조 업체 : 지오엘리먼트</div>
             </ul>
             <h3>② 화학적 기상증착방법 (CVD, Chemical Vapor Deposition)</h3>
             <ul>
-                <li>가스의 화학 반응으로 형성된 입자들을 외부 에너지가 부여된 수증기 형태로 쏘아 증착 시키는 방식</li>
-                <li>도체, 부도체, 반도체의 박막증착에 모두 사용될 수 있는 기술</li>
-                <li>현재 반도체 공정에서는 화학적 기상증착방법(CVD)를 주로 사용하고 있음</li>
-                <li>사용하는 외부 에너지에 따라 열 CVD, 플라즈마 CVD, 광 CVD로 세분화 할 수 있음</li>
-                <li>플라즈마 CVD는 저온에서 형성이 가능하고 두께 균일도를 조절할 수 있으며, 대량 처리가 가능하다는 장점으로 가장 많이 이용되고 있음</li>
+                <li>가스의 화학 반응으로 형성된 입자들을, 외부 에너지가 부여된 기체 형태로 쏘아 증착시키는 방식이다</li>
+                <li>도체, 부도체, 반도체의 박막증착에 모두 사용될 수 있는 기술이다</li>
+                <li>현재 반도체 공정에서는 화학적 기상증착방법(CVD)을 주로 사용하고 있다</li>
+                <li>사용하는 외부 에너지에 따라 열 CVD, 플라즈마 CVD, 광 CVD로 세분화할 수 있다</li>
+                <li>플라즈마 CVD는 저온에서 형성이 가능하고 두께 균일도를 조절할 수 있으며, 대량 처리가 가능하다는 장점으로 가장 많이 이용되고 있다</li>
             </ul>
-            <h3>ⓑ 원자층 증착방법 (ALD, Atomic Layer Deposition)</h3>
+            <h3>③ 원자층 증착방법 (ALD, Atomic Layer Deposition)</h3>
             <ul>
-                <li>원자층 단위로 아주 얇고 균일하게 박막을 증착하는 방식</li>
-                <li>PVD와 CVD 방법의 경우, 패턴이 깊고 좁아질수록 내부까지 균일하게 코팅하기 어려움</li>
-                <li>특히 FinFET, 3D NAND, GAA 구조 같은 3D 구조에서는 깊은 구멍 내부까지 균일한 박막이 필요 → ALD가 강력한 퍼포먼스를 보여줌</li>
+                <li>원자층 단위로 아주 얇고 균일하게 박막을 증착하는 방식이다</li>
+                <li>PVD와 CVD 방법의 경우, 패턴이 깊고 좁아질수록 내부까지 균일하게 코팅하기 어렵다</li>
+                <li>특히 FinFET, 3D NAND, GAA 구조 같은 3D 구조에서는 깊은 구멍 내부까지 균일한 박막이 필요한데, 이때 ALD가 강력한 퍼포먼스를 보여준다</li>
             </ul>
-            <h3>③ 주요 업체</h3>
+
+            <table class="compare-table">
+                <tr><th>구분</th><th>PVD</th><th>CVD</th><th>ALD</th></tr>
+                <tr><td>원리</td><td>물리적 충돌로 원자 이동</td><td>기체의 화학반응</td><td>원자층을 한 층씩 반응·세척 반복</td></tr>
+                <tr><td>단차 피복성(Step Coverage)</td><td>낮음</td><td>중간</td><td>매우 높음(깊은 홈 내부까지 균일)</td></tr>
+                <tr><td>두께 제어</td><td>보통</td><td>양호</td><td>원자층 단위로 매우 정밀</td></tr>
+                <tr><td>속도</td><td>빠름</td><td>보통</td><td>느림</td></tr>
+                <tr><td>주 용도</td><td>금속 배선층</td><td>절연막 등 다양한 박막</td><td>3D 구조 내부 박막(FinFET 등)</td></tr>
+            </table>
+
+            <h3>④ 주요 업체</h3>
             <ul>
                 <li>국내 : 원익IPS, 주성엔지니어링, TES, 유진테크(산화막)</li>
             </ul>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : 증착 두께·결함 검사와 머신비전</strong><br>
+                증착 공정 이후에는 산화 공정과 마찬가지로 박막의 두께와 균일도를 확인하는 것이 중요하다. 엘립소미터·반사분광 같은
+                광학 계측 장비로 웨이퍼 여러 지점의 두께를 측정하고, 컬러 카메라 기반 검사로 웨이퍼 전면의 색상 편차(두께 편차의
+                간접 지표)를 빠르게 스캔하기도 한다. 또한 증착 후에는 파티클, 핀홀, 박리(Peeling), 크랙 같은 결함을 브라이트필드/
+                다크필드 조합 AOI로 검출하며, 3D 구조 내부의 단차 피복성은 단면을 잘라 SEM으로 직접 들여다보는 방식(단면 SEM 분석)으로
+                검증하는 경우가 많다. 특히 ALD처럼 원자층 단위로 매우 얇게 쌓는 공정에서는 미세한 두께 편차도 소자 성능에 큰 영향을
+                주기 때문에, 계측·검사 장비의 정밀도 요구 수준이 계속 높아지고 있다.
+            </div>
         </div>
+    </div>
+
+    <div class="card nav-row">
+        <a href=".\semiconductor_etching.html" class="detail-btn"><span class="arrow">←</span> 이전 : 식각 공정 (Etching)</a>
+        <a href=".\semiconductor_ion_implantation.html" class="detail-btn">다음 : 이온 주입 공정 (Ion Implantation) <span class="arrow">→</span></a>
     </div>
 </section>
 

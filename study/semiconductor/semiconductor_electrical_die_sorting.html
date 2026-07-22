@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -50,11 +50,11 @@
             padding: 60px 20px;
         }
 
-        .section h2 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--primary); 
-            padding-left: 10px; 
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .card {
@@ -138,20 +138,80 @@
           text-decoration: none;
           transition: 0.2s;
         }
-        
+
         .detail-btn:hover {
           background: var(--primary);
           color: white;
         }
-        
+
         .arrow {
           transition: transform 0.2s;
         }
-        
+
         .detail-btn:hover .arrow {
           transform: translateX(3px);
         }
 
+        .svg-box {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .svg-box svg {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid #1f2937;
+            padding: 10px 12px;
+            text-align: left;
+            color: var(--sub);
+        }
+
+        .compare-table th {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .note {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
     </style>
 </head>
 
@@ -172,9 +232,6 @@
 
     <nav>
         <h3>EDS 공정 (Electrical Die Sorting)</h3>
-        <!--<ul>
-            <li><a href="#projects">네이게이션추가</a></li>
-        </ul>-->
     </nav>
 </header>
 
@@ -182,38 +239,131 @@
     <div class="section">
         <h2>1. 개요</h2>
         <div class="card">
+            <span class="tag">기초 개념</span>
             <ul>
-                <li>수많은 제조공정을 거친 반도체 칩은 마지막 절차인 테스트를 통해 양품, 불량품을 선별하게 됨</li>
-                    <div class="li-desc">웨이퍼 완성 단계에서 이루어지는 EDS공정(Electrical Die Sorting)</div>
-                    <div class="li-desc">조립공정을 거친 패키지 상태에서 이루어지는 패키징공정(Pakaging)</div>
+                <li>수많은 제조공정을 거친 반도체 칩은, 마지막 절차인 테스트를 통해 양품과 불량품을 선별하게 된다</li>
+                    <div class="li-desc">웨이퍼 완성 단계에서 이루어지는 EDS 공정(Electrical Die Sorting)</div>
+                    <div class="li-desc">조립공정을 거친 패키지 상태에서 이루어지는 패키징공정(Packaging)</div>
                     <div class="li-desc">제품이 출하되기 전 소비자의 관점에서 실시되는 품질 테스트 등</div>
-                <li>EDS공정(Electrical Die Sorting)은?</li>
-                <li>웨이퍼 위에 전자회로를 그리는 FAB 공정과 최종적인 제품의 형태를 갖추는 패키지 공정 사이에 진행</li>
-                <li>전기적 특성검사를 통해 개별 칩들이 원하는 품질 수준에 도달했는지를 확인하는 공정</li>
-                <li>EDS공정의 목적</li>
+                <li>EDS 공정(Electrical Die Sorting)이란?</li>
+                <li>웨이퍼 위에 전자회로를 그리는 FAB 공정과, 최종적인 제품의 형태를 갖추는 패키지 공정 사이에 진행되는 단계다. 쉽게 말하면 "웨이퍼 위에서 아직 한 조각씩 잘라지지 않은 칩들을 미리 하나하나 전기적으로 테스트해서 성적표를 매기는 과정"이라고 볼 수 있다</li>
+                <li>전기적 특성검사를 통해 개별 칩들이 원하는 품질 수준에 도달했는지를 확인하는 공정이다</li>
+                <li>EDS 공정의 목적</li>
                     <div class="li-desc">웨이퍼 상태 반도체 칩의 양품/불량품 선별</div>
                     <div class="li-desc">불량 칩 중 수선 가능한 칩의 양품화</div>
                     <div class="li-desc">FAB 공정 또는 설계에서 발견된 문제점의 수정</div>
-                    <div class="li-desc">불량 칩을 미리 선별해 이후 진행되는 패키지공정 및 테스트 작업의 효율 향상</div>
-                <li>반도체의 수율을 높이기 위해 반드시 필요한 공정 → 반도체의 생산성과 직결</li>
-                <li>프로브 카드(Probe Card)에 웨이퍼를 접촉시켜 진행</li>
-                <li>프로브 카드에 있는 수많은 미세한 핀(Pin)이 웨이퍼와 접촉해 전기를 보내고 그 신호를 통해 불량 칩을 선별하게 됨</li>
+                    <div class="li-desc">불량 칩을 미리 선별해, 이후 진행되는 패키지공정 및 테스트 작업의 효율을 향상시킴</div>
+                <li>반도체의 수율을 높이기 위해 반드시 필요한 공정이며, 반도체의 생산성과 직결된다</li>
+                <li>프로브 카드(Probe Card)를 웨이퍼에 접촉시켜 진행한다</li>
+                <li>프로브 카드에 있는 수많은 미세한 핀(Pin)이 웨이퍼 위의 각 칩 패드와 접촉해 전기를 보내고, 그 응답 신호를 통해 불량 칩을 선별하게 된다</li>
             </ul>
+
+            <div class="svg-box">
+                <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+                    <text x="320" y="20" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">EDS 검사 개념도 : 프로브 카드 &amp; 웨이퍼 맵</text>
+
+                    <rect x="80" y="40" width="120" height="14" fill="#111827" stroke="#374151"/>
+                    <text x="140" y="35" text-anchor="middle" fill="#9ca3af" font-size="10">프로브 카드</text>
+                    <line x1="95" y1="54" x2="95" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="110" y1="54" x2="110" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="125" y1="54" x2="125" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="140" y1="54" x2="140" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="155" y1="54" x2="155" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="170" y1="54" x2="170" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="185" y1="54" x2="185" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+                    <rect x="80" y="75" width="120" height="14" fill="#111827" stroke="#374151"/>
+                    <text x="140" y="86" text-anchor="middle" fill="#9ca3af" font-size="9">웨이퍼(다이 패드)</text>
+                    <text x="140" y="108" text-anchor="middle" fill="#9ca3af" font-size="9">미세 핀(Pin)이 웨이퍼 패드에 접촉</text>
+
+                    <text x="360" y="35" text-anchor="middle" fill="#9ca3af" font-size="10">전기 테스트 결과 → 웨이퍼 맵 기록</text>
+                    <g>
+                        <rect x="330" y="45" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                        <rect x="358" y="45" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                        <rect x="386" y="45" width="24" height="24" fill="rgba(239,68,68,0.5)" stroke="#ef4444"/>
+                        <rect x="330" y="73" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                        <rect x="358" y="73" width="24" height="24" fill="rgba(239,68,68,0.5)" stroke="#ef4444"/>
+                        <rect x="386" y="73" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                        <rect x="330" y="101" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                        <rect x="358" y="101" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                        <rect x="386" y="101" width="24" height="24" fill="rgba(34,197,94,0.4)" stroke="#22c55e"/>
+                    </g>
+                    <text x="480" y="55" fill="#22c55e" font-size="10">■ 양품(Pass)</text>
+                    <text x="480" y="75" fill="#ef4444" font-size="10">■ 불량(Fail)</text>
+
+                    <text x="320" y="180" text-anchor="middle" fill="#9ca3af" font-size="10">각 다이별 테스트 결과는 웨이퍼 맵(좌표별 양품/불량 지도)에 기록되어 이후 조립 공정에 전달된다</text>
+                </svg>
+            </div>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : 프로브 접촉과 머신비전</strong><br>
+                프로브 카드의 미세 핀을 웨이퍼 패드 정확한 위치에 접촉시키려면, 카메라 기반 패턴 인식으로 웨이퍼 정렬 상태를
+                먼저 확인하는 정렬(Alignment) 작업이 선행된다. 또한 테스트가 끝난 뒤에는 프로브 핀이 남긴 자국인 프로브 마크
+                (Probe Mark)를 AOI로 검사해, 핀이 패드 중앙을 제대로 눌렀는지, 과도하게 눌러 패드를 손상시키지는 않았는지
+                확인한다. 이 검사가 정확해야 이후 패키징 공정에서 와이어본딩할 때 접합 불량으로 이어지는 것을 막을 수 있다.
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>2. 전체 공정의 흐름</h2>
         <div class="card">
+            <div class="svg-box" style="max-width:640px; margin:16px auto;">
+                <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg">
+                    <text x="320" y="22" text-anchor="middle" fill="#e5e7eb" font-size="15" font-weight="700">EDS 공정의 4단계</text>
+
+                    <rect x="20" y="45" width="280" height="150" rx="10" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <path d="M20 79 L300 79" stroke="#374151"/>
+                    <rect x="20" y="45" width="280" height="34" rx="10" fill="#6366f1"/>
+                    <rect x="20" y="62" width="280" height="17" fill="#6366f1"/>
+                    <text x="160" y="67" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">1단계</text>
+                    <text x="160" y="103" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">ET Test &amp; WBI</text>
+                    <text x="160" y="118" text-anchor="middle" fill="#9ca3af" font-size="9">(Electrical Test &amp; Wafer Burn In)</text>
+                    <text x="160" y="145" text-anchor="middle" fill="#9ca3af" font-size="10">개별 소자에 전기적 직류전압·전류특성</text>
+                    <text x="160" y="160" text-anchor="middle" fill="#9ca3af" font-size="10">파라미터를 테스트해 동작 여부 판별</text>
+
+                    <path d="M300 120 L336 120" stroke="#6366f1" stroke-width="2"/>
+                    <polygon points="332,114 344,120 332,126" fill="#6366f1"/>
+
+                    <rect x="340" y="45" width="280" height="150" rx="10" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <path d="M340 79 L620 79" stroke="#374151"/>
+                    <rect x="340" y="45" width="280" height="34" rx="10" fill="#6366f1"/>
+                    <rect x="340" y="62" width="280" height="17" fill="#6366f1"/>
+                    <text x="480" y="67" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">2단계</text>
+                    <text x="480" y="103" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">Hot/Cold Test</text>
+                    <text x="480" y="140" text-anchor="middle" fill="#9ca3af" font-size="10">전기적 신호를 통해 웨이퍼 상의 칩이</text>
+                    <text x="480" y="155" text-anchor="middle" fill="#9ca3af" font-size="10">특정 온도(Hot/Cold)에서 정상 동작 여부 판별</text>
+
+                    <path d="M480 195 L480 221" stroke="#6366f1" stroke-width="2"/>
+                    <polygon points="474,217 480,229 486,217" fill="#6366f1"/>
+
+                    <rect x="340" y="225" width="280" height="150" rx="10" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <path d="M340 259 L620 259" stroke="#374151"/>
+                    <rect x="340" y="225" width="280" height="34" rx="10" fill="#6366f1"/>
+                    <rect x="340" y="242" width="280" height="17" fill="#6366f1"/>
+                    <text x="480" y="247" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">3단계</text>
+                    <text x="480" y="283" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">Repair/Final Test</text>
+                    <text x="480" y="320" text-anchor="middle" fill="#9ca3af" font-size="10">수선 가능으로 판정된 칩들을 수선한 후</text>
+                    <text x="480" y="335" text-anchor="middle" fill="#9ca3af" font-size="10">Final Test 공정으로 양/불량 최종 판단</text>
+
+                    <path d="M340 300 L304 300" stroke="#6366f1" stroke-width="2"/>
+                    <polygon points="308,294 296,300 308,306" fill="#6366f1"/>
+
+                    <rect x="20" y="225" width="280" height="150" rx="10" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <path d="M20 259 L300 259" stroke="#374151"/>
+                    <rect x="20" y="225" width="280" height="34" rx="10" fill="#6366f1"/>
+                    <rect x="20" y="242" width="280" height="17" fill="#6366f1"/>
+                    <text x="160" y="247" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">4단계</text>
+                    <text x="160" y="283" text-anchor="middle" fill="#e5e7eb" font-size="14" font-weight="700">Inking</text>
+                    <text x="160" y="320" text-anchor="middle" fill="#9ca3af" font-size="10">불량 칩을 육안으로 식별할 수 있게</text>
+                    <text x="160" y="335" text-anchor="middle" fill="#9ca3af" font-size="10">특수 잉크로 표시하는 공정</text>
+
+                    <text x="320" y="398" text-anchor="middle" fill="#9ca3af" font-size="10">① → ② → ③ → ④ 순서로 진행되며, Inking을 마친 웨이퍼는 조립(패키징) 공정으로 넘어간다</text>
+                </svg>
+            </div>
+            <h3>① ET Test &amp; WBI (Electrical Test &amp; Wafer Burn In)</h3>
             <ul>
-                <div class="img-box">
-                        <img src="../../images/eds_process.png" alt="EDS공정">
-                </div>
-            </ul>
-            <h3>① ET Test & WBI (Electrical Test & Wafer Burn In)</h3>
-            <ul>
-                <li>ET Test(Electrical Test)는 반도체 집적회로(IC) 동작에 필요한 개별소자들(트랜지스터, 저항, 캐패시터, 다이오드)에 대해 전기적 직류전압, 전류특성의 파라미터를 테스트하여 동작 여부를 판별하는 과정</li>
-                <li>이어지는 WBI공정(Wafer Burn In)은 웨이퍼에 일정 온도의 열을 가한 다음 AC(교류)/DC(직류) 전압을 가해 제품의 결합, 약한 부분 등 잠재적인 불량 요인을 찾아내는 과정</li>
+                <li>ET Test(Electrical Test)는 반도체 집적회로(IC) 동작에 필요한 개별소자들(트랜지스터, 저항, 캐패시터, 다이오드)에 대해 전기적 직류전압, 전류특성의 파라미터를 테스트하여 동작 여부를 판별하는 과정이다</li>
+                <li>이어지는 WBI 공정(Wafer Burn In)은 웨이퍼에 일정 온도의 열을 가한 다음 AC(교류)/DC(직류) 전압을 가해, 제품의 결함이나 약한 부분 등 잠재적인 불량 요인을 찾아내는 과정이다</li>
                 <li>주요 업체</li>
                     <div class="li-desc">프로브카드 : 마이크로투나노, 티에스이(TSE)</div>
                     <div class="li-desc">테스트 소켓 : 리노공업(포고형), ISC(러버형)</div>
@@ -222,20 +372,35 @@
             </ul>
             <h3>② Hot/Cold Test</h3>
             <ul>
-                <li>Hot/Cold 공정에서는 전기적 신호를 통해 웨이퍼 상의 각각의 칩 중 불량품이 있는지 판정. 수선 가능한 칩은 수선 공정에서 처리하도록 정보를 저장하는데 이때, 특정 온도에서 정상적으로 동작하는지 판별하기 위해 상온보다 높고 낮은 온도의 테스트가 병행 됨</li>
+                <li>Hot/Cold Test 공정에서는 전기적 신호를 통해 웨이퍼 상의 각 칩 중에 불량품이 있는지 판정한다</li>
+                <li>수선 가능한 칩은 수선 공정에서 처리하도록 그 정보를 별도로 저장해 둔다</li>
+                <li>이때, 칩이 특정 온도에서도 정상적으로 동작하는지 판별하기 위해 상온보다 높거나 낮은 온도에서의 테스트가 병행된다</li>
             </ul>
             <h3>③ Repair/Final Test</h3>
             <ul>
-                <li>Hot/Cold 공정에서 수선 가능으로 판정된 칩들을 수선하고, 수선이 끝나면 Final Test 공정을 통해 수선이 제대로 이루어졌는지 재차 검증</li>
-                <li>EDS공정에서 중요한 단계로 볼 수 있음</li>
+                <li>Hot/Cold 공정에서 수선 가능으로 판정된 칩들을 수선하고, 수선이 끝나면 Final Test 공정을 통해 수선이 제대로 이루어졌는지 재차 검증한다</li>
+                <li>EDS 공정에서 중요한 단계로 볼 수 있다</li>
             </ul>
             <h3>④ Inking</h3>
             <ul>
-                <li>불량 칩에 특수 잉크를 찍어 육안으로도 불량을 식별할 수 있도록 만드는 공정을 의미하며, Hot/Cold Test공정에서 불량으로 판정된 칩, Final Test공정에서 재검증 결과 불량으로 처리된 칩, 그리고 웨이퍼에서 완성되지 않은 반도체 칩(Dummy Die)등을 구별</li>
-                <li>이렇게 처리된 불량 칩은 조립 작업을 진행하지 않기 때문에 조립 및 검사 공정에서 사용되는 원부자재, 설비, 시간, 인원 등의 손실 점감 효과가 있음</li>
-                <li>Inling 공정을 마친 웨이퍼는 건조(Bake)된 후, QC(Quality Control)검사를 거쳐 조립공정으로 옮겨지게 됨</li>
+                <li>불량 칩에 특수 잉크를 찍어 육안으로도 불량을 식별할 수 있도록 만드는 공정을 의미한다. Hot/Cold Test 공정에서 불량으로 판정된 칩, Final Test 공정에서 재검증 결과 불량으로 처리된 칩, 그리고 웨이퍼에서 완성되지 않은 반도체 칩(Dummy Die) 등을 이 방식으로 구별한다</li>
+                <li>이렇게 처리된 불량 칩은 조립 작업을 진행하지 않기 때문에, 조립 및 검사 공정에서 사용되는 원부자재, 설비, 시간, 인원 등의 손실 절감 효과가 있다</li>
+                <li>Inking 공정을 마친 웨이퍼는 건조(Bake)된 후, QC(Quality Control) 검사를 거쳐 조립공정으로 옮겨지게 된다</li>
             </ul>
+
+            <div class="note">
+                <strong>🔍 개발자 노트 : Inking과 현대적 대체 기술</strong><br>
+                전통적인 Inking 방식은 불량 칩에 물리적으로 잉크 방울을 찍는 방식이라, 잉크가 정확한 다이 위치에 찍혔는지,
+                번지거나 인접 다이를 오염시키지는 않았는지 육안 또는 머신비전으로 확인하는 검사가 필요했다. 최근 양산 라인에서는
+                물리적 잉크 대신 앞서 설명한 소프트웨어 기반 '웨이퍼 맵'으로 양품/불량 정보를 전자적으로 기록하는 방식(전자 맵핑)이
+                더 널리 쓰이지만, 여전히 일부 공정이나 레거시 장비에서는 물리적 잉크 마킹과 그 검사가 함께 사용된다.
+            </div>
         </div>
+    </div>
+
+    <div class="card nav-row">
+        <a href=".\semiconductor_metal_interconnect.html" class="detail-btn"><span class="arrow">←</span> 이전 : 금속 배선 공정 (Metal Interconnect)</a>
+        <a href=".\semiconductor_packaging.html" class="detail-btn">다음 : 패키징 공정 (Packaging) <span class="arrow">→</span></a>
     </div>
 </section>
 
