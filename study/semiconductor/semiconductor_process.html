@@ -297,6 +297,48 @@
             color: var(--primary);
             margin-bottom: 10px;
         }
+
+        .vc-wrap {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-top: 12px;
+        }
+
+        .vc-col {
+            flex: 0 0 138px;
+            background: var(--card);
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .vc-col-header {
+            background: var(--primary);
+            color: #ffffff;
+            text-align: center;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 6px;
+        }
+
+        .vc-col-body {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .vc-item {
+            background: #0b1120;
+            border: 1px solid #1f2937;
+            border-radius: 6px;
+            padding: 8px 6px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--sub);
+        }
     </style>
 </head>
 <body>
@@ -460,11 +502,163 @@
             </div>
             <div class="card">
                 <h3 class="sub-title-h3">전공정 국내 소부장 업체</h3>
-                <img src="../../images/Equipment_company_valuechain_postprocess.png" alt="전공정 소부장 Value Chain">
+                <div class="vc-wrap">
+                    <div class="vc-col">
+                        <div class="vc-col-header">웨이퍼/CMP</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">SK실트론</div>
+                            <div class="vc-item">케이씨텍</div>
+                            <div class="vc-item">SKC엔펄스</div>
+                            <div class="vc-item">솔브레인</div>
+                            <div class="vc-item">동진쎄미켐</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">산화/어닐링</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">AP시스템</div>
+                            <div class="vc-item">이오테크닉스</div>
+                            <div class="vc-item">디아이티</div>
+                            <div class="vc-item">HPSP</div>
+                            <div class="vc-item">예스티</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">포토</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">동진쎄미켐</div>
+                            <div class="vc-item">에스앤에스텍</div>
+                            <div class="vc-item">에프에스티</div>
+                            <div class="vc-item">이엔에프테크놀로지</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">식각</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">브이엠</div>
+                            <div class="vc-item">피에스케이</div>
+                            <div class="vc-item">이엔에프테크놀로지</div>
+                            <div class="vc-item">솔브레인</div>
+                            <div class="vc-item">티씨케이</div>
+                            <div class="vc-item">원익QnC</div>
+                            <div class="vc-item">하나머티리얼즈</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">세정</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">코미코</div>
+                            <div class="vc-item">한솔아이원스</div>
+                            <div class="vc-item">제우스</div>
+                            <div class="vc-item">케이씨텍</div>
+                            <div class="vc-item">엘티씨</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">증착</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">원익IPS</div>
+                            <div class="vc-item">유진테크</div>
+                            <div class="vc-item">테스</div>
+                            <div class="vc-item">주성엔지니어링</div>
+                            <div class="vc-item">한솔케미칼</div>
+                            <div class="vc-item">솔브레인</div>
+                            <div class="vc-item">덕산테코피아</div>
+                            <div class="vc-item">디엔에프</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">인프라</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">신성이엔지</div>
+                            <div class="vc-item">한양이엔지</div>
+                            <div class="vc-item">엘오티베큠</div>
+                            <div class="vc-item">GST</div>
+                            <div class="vc-item">유니셈</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card">
                 <h3 class="sub-title-h3">후공정 국내 소부장 업체</h3>
-                <img src="../../images/Equipment_company_valuechain_preprocess.png" alt="후공정 소부장 Value Chain">
+                <div class="vc-wrap">
+                    <div class="vc-col">
+                        <div class="vc-col-header">테스트 장비</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">테크윙</div>
+                            <div class="vc-item">와이씨</div>
+                            <div class="vc-item">디아이</div>
+                            <div class="vc-item">네오셈</div>
+                            <div class="vc-item">엑시콘</div>
+                            <div class="vc-item">유니테스트</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">패키징 및 절단 장비</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">이오테크닉스</div>
+                            <div class="vc-item">한미반도체</div>
+                            <div class="vc-item">프로텍</div>
+                            <div class="vc-item">에스티아이</div>
+                            <div class="vc-item">피에스케이홀딩스</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">패키징 소재/소켓</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">덕산하이메탈</div>
+                            <div class="vc-item">엠케이전자</div>
+                            <div class="vc-item">리노공업</div>
+                            <div class="vc-item">ISC</div>
+                            <div class="vc-item">티에스이</div>
+                            <div class="vc-item">티에프이</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">기판</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">삼성전기</div>
+                            <div class="vc-item">LG이노텍</div>
+                            <div class="vc-item">대덕전자</div>
+                            <div class="vc-item">해성디에스</div>
+                            <div class="vc-item">심텍</div>
+                            <div class="vc-item">이수페타시스</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">OSAT</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">하나마이크론</div>
+                            <div class="vc-item">두산테스나</div>
+                            <div class="vc-item">SFA반도체</div>
+                            <div class="vc-item">한양디지텍</div>
+                            <div class="vc-item">네패스</div>
+                            <div class="vc-item">네패스아크</div>
+                            <div class="vc-item">LB세미콘</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">검사/계측 장비</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">파크시스템스</div>
+                            <div class="vc-item">넥스틴</div>
+                            <div class="vc-item">인텍플러스</div>
+                            <div class="vc-item">펨트론</div>
+                            <div class="vc-item">오로스테크놀로지</div>
+                        </div>
+                    </div>
+                    <div class="vc-col">
+                        <div class="vc-col-header">IP/디자인하우스</div>
+                        <div class="vc-col-body">
+                            <div class="vc-item">파두</div>
+                            <div class="vc-item">제주반도체</div>
+                            <div class="vc-item">칩스앤미디어</div>
+                            <div class="vc-item">오픈엣지테크놀로지</div>
+                            <div class="vc-item">가온칩스</div>
+                            <div class="vc-item">에이직랜드</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="card">
