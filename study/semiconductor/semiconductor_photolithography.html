@@ -302,10 +302,6 @@
                 <li>전자회로 패턴으로 설계되는 이 도면에 엔지니어들이 설계한 정밀회로가 담기며, 그 정밀도가 반도체의 집적도를 결정한다</li>
             </ul>
 
-            <h3>② 사진 원판의 역할을 하는 포토마스크 만들기</h3>
-            <div class="img-box">
-                <img src="../../images/photo_photomask.png" alt="포토마스크(Photo Mask)">
-            </div>
             <ul>
                 <li>포토마스크(Photo Mask) : 설계된 회로 패턴을, 순도가 높은 석영(Quartz)을 가공해서 만든 기판 위에 크롬(Cr)으로 형상화한 것이다</li>
                 <li>마스크는 Reticle이라고도 부르는데, 이것은 회로 패턴을 고스란히 담은 필름으로 사진 원판(음화)과 같은 기능을 한다</li>
@@ -320,23 +316,23 @@
 
             <h3>③ 감광액 도포</h3>
             <div class="svg-box">
-                <svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg">
-                    <text x="260" y="20" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">감광액 도포 후 웨이퍼 단면 구조</text>
+                <svg viewBox="0 0 520 190" xmlns="http://www.w3.org/2000/svg">
+                    <text x="260" y="18" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">감광액 도포 후 웨이퍼 단면 구조</text>
 
-                    <rect x="110" y="170" width="260" height="45" fill="#111827" stroke="#374151" stroke-width="2"/>
-                    <text x="240" y="197" text-anchor="middle" fill="#9ca3af" font-size="12">실리콘(Si) 기판</text>
+                    <rect x="110" y="107" width="260" height="45" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <text x="240" y="134" text-anchor="middle" fill="#9ca3af" font-size="12">실리콘(Si) 기판</text>
 
-                    <rect x="110" y="148" width="260" height="22" fill="rgba(99,102,241,0.35)" stroke="#6366f1"/>
-                    <line x1="370" y1="159" x2="400" y2="159" stroke="#6366f1"/>
-                    <text x="405" y="150" fill="#6366f1" font-size="11" font-weight="700">SiO₂ 산화막</text>
-                    <text x="405" y="163" fill="#9ca3af" font-size="9">(두께 수 nm~수백 nm)</text>
+                    <rect x="110" y="85" width="260" height="22" fill="rgba(99,102,241,0.35)" stroke="#6366f1"/>
+                    <line x1="370" y1="96" x2="400" y2="96" stroke="#6366f1"/>
+                    <text x="405" y="87" fill="#6366f1" font-size="11" font-weight="700">SiO₂ 산화막</text>
+                    <text x="405" y="100" fill="#9ca3af" font-size="9">(두께 수 nm~수백 nm)</text>
 
-                    <rect x="110" y="118" width="260" height="30" fill="rgba(245,158,11,0.4)" stroke="#f59e0b"/>
-                    <line x1="370" y1="133" x2="400" y2="133" stroke="#f59e0b"/>
-                    <text x="405" y="124" fill="#f59e0b" font-size="11" font-weight="700">감광액(PR)</text>
-                    <text x="405" y="137" fill="#9ca3af" font-size="9">(빛에 민감한 물질)</text>
+                    <rect x="110" y="55" width="260" height="30" fill="rgba(245,158,11,0.4)" stroke="#f59e0b"/>
+                    <line x1="370" y1="70" x2="400" y2="70" stroke="#f59e0b"/>
+                    <text x="405" y="61" fill="#f59e0b" font-size="11" font-weight="700">감광액(PR)</text>
+                    <text x="405" y="74" fill="#9ca3af" font-size="9">(빛에 민감한 물질)</text>
 
-                    <text x="260" y="230" text-anchor="middle" fill="#9ca3af" font-size="10">산화막으로 보호된 웨이퍼 위에, 빛에 반응하는 감광액(PR)을 얇고 균일하게 코팅한다</text>
+                    <text x="260" y="175" text-anchor="middle" fill="#9ca3af" font-size="10">산화막으로 보호된 웨이퍼 위에, 빛에 반응하는 감광액(PR)을 얇고 균일하게 코팅한다</text>
                 </svg>
             </div>
             <ul>
@@ -401,8 +397,41 @@
             </ul>
 
             <h3>⑤ 현상 공정</h3>
-            <div class="img-box">
-                <img src="../../images/photo_develop.png" alt="현상">
+            <div class="svg-box" style="max-width:700px; margin:16px auto;">
+                <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+                    <text x="320" y="16" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="700">현상(Development) 공정 : 양성 vs 음성 감광액</text>
+
+                    <circle cx="320" cy="34" r="9" fill="#a78bfa"/>
+                    <path d="M305 34 L299 34 M341 34 L347 34 M320 24 L320 18 M309 24 L304 19 M331 24 L336 19" stroke="#a78bfa" stroke-width="1.3"/>
+                    <text x="345" y="38" fill="#a78bfa" font-size="9">UV Light</text>
+
+                    <path d="M300 44 L280 62 M320 44 L320 62 M340 44 L360 62" stroke="#a78bfa" stroke-width="1"/>
+
+                    <rect x="220" y="62" width="200" height="16" fill="none" stroke="#9ca3af"/>
+                    <rect x="220" y="62" width="40" height="16" fill="#374151"/>
+                    <rect x="300" y="62" width="40" height="16" fill="#374151"/>
+                    <rect x="380" y="62" width="40" height="16" fill="#374151"/>
+                    <text x="320" y="94" text-anchor="middle" fill="#9ca3af" font-size="9">포토마스크 (양쪽 동일)</text>
+
+                    <line x1="320" y1="104" x2="320" y2="262" stroke="#1f2937"/>
+
+                    <text x="160" y="118" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">양성 감광액 (Positive PR)</text>
+                    <rect x="60" y="180" width="40" height="15" fill="#f59e0b"/>
+                    <rect x="140" y="180" width="40" height="15" fill="#f59e0b"/>
+                    <rect x="220" y="180" width="40" height="15" fill="#f59e0b"/>
+                    <rect x="60" y="195" width="200" height="30" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <text x="160" y="240" text-anchor="middle" fill="#9ca3af" font-size="9">노광(투명 마스크 통과)된 부분은 제거되고,</text>
+                    <text x="160" y="253" text-anchor="middle" fill="#9ca3af" font-size="9">가려졌던(불투명) 부분만 남는다</text>
+
+                    <text x="480" y="118" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="700">음성 감광액 (Negative PR)</text>
+                    <rect x="420" y="180" width="40" height="15" fill="#f59e0b"/>
+                    <rect x="500" y="180" width="40" height="15" fill="#f59e0b"/>
+                    <rect x="380" y="195" width="200" height="30" fill="#111827" stroke="#374151" stroke-width="2"/>
+                    <text x="480" y="240" text-anchor="middle" fill="#9ca3af" font-size="9">노광(투명 마스크 통과)된 부분만 남고,</text>
+                    <text x="480" y="253" text-anchor="middle" fill="#9ca3af" font-size="9">가려졌던(불투명) 부분은 제거된다</text>
+
+                    <text x="320" y="282" text-anchor="middle" fill="#9ca3af" font-size="10">같은 마스크라도 감광액 종류(양성/음성)에 따라 최종적으로 남는 회로 패턴이 정반대가 된다</text>
+                </svg>
             </div>
             <ul>
                 <li>웨이퍼에 현상액을 뿌려 가며 노광된 영역과 노광되지 않은 영역을 선택적으로 제거해 회로 패턴을 형성하는 공정이다</li>
